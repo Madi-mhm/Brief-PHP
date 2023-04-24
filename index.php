@@ -10,17 +10,16 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <h1> BRIEF PHP </h1>
+    <h1> Brief PHP </h1>
     <ul>
-
-<li><a href="./src/game/game.php"> GAME <a></li>
-<li><a href="./src/competition/competition.php"> COMPETITION <a></li>
-<li><a href="./src/player/player.php"> PLAYER <a></li>
-<li><a href="./src/sponsor/sponsor.php"> SPONSOR <a></li>
-<li><a href="./src/team/team.php"> TEAM <a></li>
-</ul>
+        <a href="./src/game/game.php"><button class="btn">GAME</button><a>       
+        <a href="./src/competition/competition.php"> <button class="btn">COMPETITION</button><a>        
+        <a href="./src/player/player.php"><button class="btn">PLAYER</button><a>
+        <a href="./src/sponsor/sponsor.php"><button class="btn">SPONSOR</button><a>
+        <a href="./src/team/team.php"><button class="btn">TEAM</button><a>
+    </ul>
 </body>
 
-<script src="./script.js"></script>
+<script src="./src/script.js"></script>
 </html>
 
