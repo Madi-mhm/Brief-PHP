@@ -18,7 +18,7 @@
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label>Nom de la compétition</label>
+                        <label>Name</label>
                         <input type="text" name="name" minlength="3" maxlength="50">
                     </div>
                     <div class="boite">
@@ -26,7 +26,7 @@
                         <input type="text" name="description" minlength="3" maxlength="1000">
                     </div>
                     <div class="boite">
-                        <label>Ville</label>
+                        <label>City</label>
                         <input type="text" name="city" minlength="3" maxlength="50">
                     </div>
                     <div class="boite">
@@ -34,14 +34,14 @@
                         <input type="text" name="format" minlength="3" maxlength="50">
                     </div>
                     <div class="boite">
-                        <label>Récompense</label>
+                        <label>Cash_Prize</label>
                         <input type="text" name="cash_prize" minlength="3" maxlength="50">
                     </div>
 
                 </div>
             </div>
             <div class="pied-formulaire">
-                <button name="submit"><strong>Soumettre</strong></button>
+                <button name="submit"><strong>submit</strong></button>
             </div>
            </div>
         </form>
