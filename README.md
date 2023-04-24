@@ -6,18 +6,17 @@ trello : https://trello.com/b/wRUBoIiP/brief-php
 
 ## Pour être a jour avec les commits du master sur votre branche:
 
-1. récuperer le projet à jour sur la branch Master : 
+1. Récuperer le projet à jour sur la branch master : 
    ``` git pull ```
-2. passer de la branch master à votre branch
+2. Passer de la branch master à votre branch :
    ``` git checkout <votre branche> ```
-3. récuperer le projet a jouer de master à votre branch
+3. Récuperer le projet à jour de master vers votre branch :
   ``` git merge master ```
-4. mettre à jour le projet sur votre branch
+4. Mettre à jour le projet sur votre branch :
   ```git push ```
   
 ## Pour faire votre pull request
 
-1.Cliquer sur "pull request" sur le repo
-
+1. Cliquer sur "pull request" sur github.
 
 ![Cover](https://github.com/JDeniauSimplon/Brief-PHP/blob/master/sch%C3%A9ma%20BDD/mpd_esport.jpg)
