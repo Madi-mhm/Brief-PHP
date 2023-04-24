@@ -41,7 +41,7 @@
                 </div>
             </div>
             <div class="pied-formulaire">
-                <button name="submit">Soumettre</button>
+                <button name="submit"><strong>Soumettre</strong></button>
             </div>
            </div>
         </form>
