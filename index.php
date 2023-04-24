@@ -10,9 +10,17 @@
     <link rel="stylesheet" href="./src/style.css">
 </head>
 <body>
-    <h1> Yo les potes </h1>
+    <h1> BRIEF PHP </h1>
+    <ul>
+
+<li><a href="./src/game/game.php"> GAME <a></li>
+<li><a href="./src/competition/competition.php"> COMPETITION <a></li>
+<li><a href="./src/player/player.php"> PLAYER <a></li>
+<li><a href="./src/sponsor/sponsor.php"> SPONSOR <a></li>
+<li><a href="./src/team/team.php"> TEAM <a></li>
+</ul>
 </body>
 
-<script src="./src/script.js"></script>
+<script src="./script.js"></script>
 </html>
 
