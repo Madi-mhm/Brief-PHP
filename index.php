@@ -12,25 +12,11 @@
 <body>
     <h1> Brief PHP </h1>
     <ul>
-        <button class="btn">
-            <a href="./src/game/game.php">GAME<a>
-        </button>
-
-        <button class="btn">
-            <a href="./src/competition/competition.php">COMPETITION<a>
-        </button>
-
-        <button class="btn">
-            <a href="./src/player/player.php"> PLAYER <a>
-        </button>
-
-        <button class="btn">
-            <a href="./src/sponsor/sponsor.php"> SPONSOR <a>
-        </button>
-
-        <button class="btn">
-            <a href="./src/team/team.php"> TEAM <a>
-        </button>
+        <a href="./src/game/game.php"><button class="btn">GAME</button><a>       
+        <a href="./src/competition/competition.php"> <button class="btn">COMPETITION</button><a>        
+        <a href="./src/player/player.php"><button class="btn">PLAYER</button><a>
+        <a href="./src/sponsor/sponsor.php"><button class="btn">SPONSOR</button><a>
+        <a href="./src/team/team.php"><button class="btn">TEAM</button><a>
     </ul>
 </body>
 
