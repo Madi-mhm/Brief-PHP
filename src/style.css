@@ -40,8 +40,9 @@ ul{
     font-size: 20px;
 }
 
-.btn a{
-    text-decoration: none;
-    
-}
 
+a{
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+}
