@@ -22,12 +22,10 @@
         <a href="./src/team/admin_competition.php"><button class="btn">COMPETITION ADMIN</button><a>
         <a href="./src/player/admin_player.php"><button class="btn">PLAYER ADMIN</button><a>
         <a href="./src/sponsor/admin_sponsor.php"><button class="btn">SPONSOR ADMIN</button><a>
-        <a href="./src/team/admin_team.php"><button class="btn">TEAM ADMIN</button><a>
-
-        
+        <a href="./src/team/admin_team.php"><button class="btn">TEAM ADMIN</button><a>        
     </ul>
 </body>
 
-<script src="./src/script.js"></script>
+
 </html>
 
