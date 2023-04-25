@@ -4,16 +4,16 @@ class Sponsor {
     private $brand; 
 
     public function getId(){
-        return $this->id;
+        return $this->id
     }
     public function setId($id){
-        $this -> id = $id;
+        $this -> id = $id
     }
     public function getBrand(){
-        return $this->id;
+        return $this->id
     }
     public function setBrand($brand){
-        $this -> brand = $brand;
+        $this -> brand = $brand
     }
 };
 
