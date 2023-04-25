@@ -17,6 +17,7 @@
         <a href="./src/player/player.php"><button class="btn">PLAYER</button><a>
         <a href="./src/sponsor/sponsor.php"><button class="btn">SPONSOR</button><a>
         <a href="./src/team/team.php"><button class="btn">TEAM</button><a>
+        
     </ul>
 </body>
 
