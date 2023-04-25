@@ -13,62 +13,6 @@ CREATE TABLE IF NOT EXISTS team (
     PRIMARY KEY (id)
 );
 
-CREATE TABLE IF NOT EXISTS game (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    name varchar(50) NOT NULL,
-    station varchar(30) NOT NULL,
-    format varchar(50),
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS player (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    first_name varchar(50) NOT NULL,
-    second_name varchar(50) NOT NULL,
-    city varchar(30),
-    team_id int(10),
-    game_id int(10),
-    PRIMARY KEY (id),
-    CONSTRAINT fk_team_id_player
-    FOREIGN KEY (team_id)
-    REFERENCES team(id),
-    CONSTRAINT fk_game_id_player
-    FOREIGN KEY (game_id)
-    REFERENCES game(id)
-);
-
-CREATE TABLE IF NOT EXISTS competition (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    name varchar(50) NOT NULL,
-    description varchar(300) NOT NULL,
-    city varchar(30),
-    format varchar(50) NOT NULL,
-    cash_prize int(9) NOT NULL,
-    PRIMARY KEY (id)
-);
-
-CREATE TABLE IF NOT EXISTS team_competition (
-    team_id int(10),
-    competition_id int(10),
-    PRIMARY KEY (team_id, competition_id),
-    CONSTRAINT fk_team_id_competition
-    FOREIGN KEY (team_id)
-    REFERENCES team(id),
-    CONSTRAINT fk_competition_id_team
-    FOREIGN KEY (competition_id)
-    REFERENCES competition(id)
-);
-
-CREATE TABLE IF NOT EXISTS sponsor (
-    id int(10) NOT NULL AUTO_INCREMENT,
-    brand varchar(50) NOT NULL,
-    team_id int(10),
-    PRIMARY KEY (id),
-    CONSTRAINT fk_team_id_sponsor
-    FOREIGN KEY (team_id)
-    REFERENCES team(id)
-);
-
 INSERT INTO game (name, station, format) VALUES
 ('League of Legends', 'PC', 'MOBA'),
 ('Dota 2', 'PC', 'MOBA'),
