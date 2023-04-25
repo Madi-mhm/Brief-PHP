@@ -6,37 +6,29 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="competition.css">
-    <script type="module" src="competition.js"></script> 
+    <link rel="stylesheet" href="./formulaire_player.css">
     <title>Brief php</title>
 </head>
 <body>
     <section class="page">
         <form method="POST" action="">
-           <h1>Competition</h1>
+           <h1>Player</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label>Name</label>
+                        <label>First-name</label>
                         <input type="text" name="name" minlength="3" maxlength="50">
                     </div>
                     <div class="boite">
-                        <label>Description</label>
+                        <label>Last_name</label>
                         <input type="text" name="description" minlength="3" maxlength="1000">
                     </div>
                     <div class="boite">
                         <label>City</label>
                         <input type="text" name="city" minlength="3" maxlength="50">
                     </div>
-                    <div class="boite">
-                        <label>Format</label>
-                        <input type="text" name="format" minlength="3" maxlength="50">
-                    </div>
-                    <div class="boite">
-                        <label>Cash_Prize</label>
-                        <input type="text" name="cash_prize" minlength="3" maxlength="50">
-                    </div>
+                    
 
                 </div>
             </div>
@@ -46,6 +38,8 @@
            </div>
         </form>
     </section>
+    <script type="module" src="player.js"></script> 
+
 </body>
 
 

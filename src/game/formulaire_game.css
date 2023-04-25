@@ -81,41 +81,4 @@ form .pied-formulaire button:hover {
      transform: scale(1.1);
 }
 
-.page_admin {
-    padding: 25px 80px;
-    color: white;
-}
-
-.page_admin h1 {
-   font-size: 40px;
-}
-
-.page_admin .tab {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-table {
-    width: 600px;
-    border-collapse: collapse;
-    margin: 20px 0;
-    border: 1px solid;
-}
-
-thead {
-    background-color: #c74141;
-}
-
-th, td {
-    padding: 8px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
-}
-
-tr:hover {
-    background-color: #f5f5f5;
-    color: black;
-}
-
 
