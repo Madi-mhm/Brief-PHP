@@ -22,11 +22,11 @@
                     </div>
                     <div class="boite">
                         <label>Station</label>
-                        <input type="text" name="description" minlength="3" maxlength="1000">
+                        <input type="text" name="station" minlength="3" maxlength="1000">
                     </div>
                     <div class="boite">
                         <label>Format</label>
-                        <input type="text" name="city" minlength="3" maxlength="50">
+                        <input type="text" name="format" minlength="3" maxlength="50">
                     </div>
                     
 
