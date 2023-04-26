@@ -50,6 +50,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                     </tbody>
                 <tbody>
             </table>
+            <a href="../../index.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
 </body>
