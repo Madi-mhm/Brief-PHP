@@ -1,4 +1,18 @@
-<?php ?>
+<?php require './ManagerTeam.php';
+
+$managerTeam = new ManagerTeam();
+$allTeams = $managerTeam->getAllTeams();
+
+if (isset($_POST['name']) && isset($_POST['description'])) {
+    $newTeam = new Team();
+
+    $newTeam->setName($_POST['name']);
+    $newTeam->setDescription($_POST['description']);
+
+    $managerTeam->create($newTeam);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,11 +32,11 @@
                 <div class="contenu">
                     <div class="boite">
                         <label>Name</label>
-                        <input type="text" name="name" minlength="3" maxlength="50">
+                        <input type="text" name="name" maxlength="50">
                     </div>
                     <div class="boite">
                         <label>Description</label>
-                        <input type="text" name="description" minlength="3" maxlength="1000">
+                        <input type="text" name="description" maxlength="1000">
                     </div>                   
                 </div>
             </div>
