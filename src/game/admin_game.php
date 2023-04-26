@@ -1,4 +1,13 @@
-<?php ?>
+<?php 
+
+require ('./GameClass.php');
+$newGameClass = new Game;
+
+require('./ManagerGame.php');
+$managerGame = new ManagerGame();
+$allGames = $managerGame->getAllGames();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,25 +23,31 @@
     <section class="page_admin">
         <h1>Administration game page</h1>
         <div class="tab">
-          <table>
-        <thead>
+          <table> 
+            <thead>
             <tr>
-                <th>ID</th>
                 <th>Nom</th>
                 <th>Station</th>
                 <th>Format</th>
             </tr>
-        </thead>
-        <tbody>
-            <!-- Les données de la base de données devraient être insérées ici -->
-            <tr>
-                <td>1</td>
-                <td>League of Legends</td>
-                <td>PC</td>
-                <td>MOBA</td>
-            </tr>
-        </tbody>
-    </table>
+            </thead>
+            <tbody>
+            <?php foreach ($allGames as $game) { ?>
+                <tr>
+                  <td><?php echo $game->getName(); ?></td>
+                  <td><?php echo $game->getStation(); ?></td>
+                  <td><?php echo $game->getFormat(); ?></td>
+                </tr>
+              <?php } ?>
+              <?php if (isset($_POST['name'])) { ?>
+                <tr>
+                  <td><?php echo $_POST['name']; ?></td>
+                  <td><?php echo $_POST['station']; ?></td>
+                  <td><?php echo isset($_POST['format']); ?></td>
+                </tr>
+              <?php } ?>
+            </tbody>
+          </table>
         </div>
     </section>
 </body>

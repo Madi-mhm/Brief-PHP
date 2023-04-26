@@ -1,4 +1,20 @@
-<?php ?>
+<?php 
+require './ManagerGame.php';
+
+$managerGame = new ManagerGame();
+$allGames = $managerGame->getALlGames();
+
+if (!empty($_POST['name']) && isset($_POST['station']) && isset($_POST['format'])) {
+    $newGame = new Game();
+
+    $newGame->setName($_POST['name']);
+    $newGame->setStation($_POST['station']);
+    $newGame->setFormat($_POST['format']);
+
+    $managerGame->create($newGame);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -17,19 +33,17 @@
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label>Name</label>
-                        <input type="text" name="name" minlength="3" maxlength="50">
+                        <label for="name">Name</label>
+                        <input type="text" name="name" axlength="50">
                     </div>
                     <div class="boite">
-                        <label>Station</label>
-                        <input type="text" name="station" minlength="3" maxlength="1000">
+                        <label for="station">Station</label>
+                        <input type="text" name="station" maxlength="1000">
                     </div>
                     <div class="boite">
-                        <label>Format</label>
-                        <input type="text" name="format" minlength="3" maxlength="50">
+                        <label for="format">Format</label>
+                        <input type="text" name="format" maxlength="50">
                     </div>
-                    
-
                 </div>
             </div>
             <div class="pied-formulaire">
