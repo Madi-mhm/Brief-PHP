@@ -1,8 +1,5 @@
 <?php 
 
-require ('./GameClass.php');
-$newGameClass = new Game;
-
 require('./ManagerGame.php');
 $managerGame = new ManagerGame();
 $allGames = $managerGame->getAllGames();
@@ -43,7 +40,7 @@ $allGames = $managerGame->getAllGames();
                 <tr>
                   <td><?php echo $_POST['name']; ?></td>
                   <td><?php echo $_POST['station']; ?></td>
-                  <td><?php echo isset($_POST['format']); ?></td>
+                  <td><?php echo ($_POST['format']); ?></td>
                 </tr>
               <?php } ?>
             </tbody>
