@@ -1,4 +1,13 @@
-<?php ?>
+<?php 
+
+require ('./SponsorClass.php');
+$newSponsor = new Sponsor;
+
+require('./SponsorManager.php');
+$sponsorManager = new SponsorManager();
+$getAllSponsor = $sponsorManager->getAllSponsor();
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -13,21 +22,29 @@
     <section class="page_admin">
         <h1>Administration game page</h1>
         <div class="tab">
-          <table>
-        <thead>
-            <tr>
-                <th>ID</th>
-                <th>Brand</th>
-            </tr>
-        </thead>
-        <tbody>
-            <!-- Les données de la base de données devraient être insérées ici -->
-            <tr>
-                <td>1</td>
-                <td>Gucci</td>
-            </tr>
-        </tbody>
-    </table>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Brand</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php foreach ($getAllSponsor as $sponsor) { ?>
+                        <tr>
+                          <td><?php echo $sponsor->getId(); ?></td>
+                          <td><?php echo $sponsor->getBrand(); ?></td>
+                        </tr>
+                      <?php } ?>
+                      <?php if (isset($_POST['brand'])) { ?>
+                        <tr>
+                          <td><?php echo $_POST['id']; ?></td>
+                          <td><?php echo $_POST['brand']; ?></td>
+                        </tr>
+                      <?php } ?>
+                    </tbody>
+                <tbody>
+            </table>
         </div>
     </section>
 </body>

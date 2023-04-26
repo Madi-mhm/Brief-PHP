@@ -1,11 +1,11 @@
 <?php 
 
-require ("./SponsorClass.php");
+// require ("./SponsorClass.php");
 require ("../DBManager.php");
 
 class SponsorManager extends DBManager {
 
-public function getAll() {
+public function getAllSponsor() {
 
     $sponsorData = [];
 
@@ -19,6 +19,16 @@ public function getAll() {
     }
  return $sponsorData;
 }
-}
 
-?>
+public function create($sponsor){
+    $request = 'INSERT INTO sponsor (id, brand) VALUE (?, ?)';
+    $query = $this->getConnexion()->prepare($request);
+
+    $query = execute([
+        $sponsor->getId, $sponsor->getBrand
+    ]);
+
+    // Rafraichie la page
+    header('Refresh:');
+}
+}
