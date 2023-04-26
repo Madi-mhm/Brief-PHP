@@ -1,4 +1,4 @@
-<!-- <?php 
+<?php 
 require './SponsorManager.php';
 
 $sponsorManager = new SponsorManager();
@@ -13,7 +13,7 @@ if (!empty($_POST['brand']) ) {
     $sponsorManager->create($newSponsor);
 }
 
-?> -->
+?>
 
 <!DOCTYPE html>
 <html lang="en">

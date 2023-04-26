@@ -14,6 +14,7 @@ public function getAllSponsor() {
     foreach ($res as $key) {
         $newSponsor = new Sponsor;
         $newSponsor->setBrand($key['brand']);
+        $newSponsor->setId($key['id']);
 
         $sponsorData[] = $newSponsor;
     }
@@ -21,11 +22,11 @@ public function getAllSponsor() {
 }
 
 public function create($sponsor){
-    $request = 'INSERT INTO sponsor (id, brand) VALUE (?, ?)';
+    $request = 'INSERT INTO sponsor (brand) VALUE (?)';
     $query = $this->getConnexion()->prepare($request);
 
-    $query = execute([
-        $sponsor->getId(), $sponsor->getBrand()
+    $query -> execute([
+        $sponsor->getBrand()
     ]);
 
     // Rafraichie la page
