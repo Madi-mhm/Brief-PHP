@@ -33,6 +33,7 @@ $allTeams = $managerTeam->getAllTeams();
                   <td><?php echo $team->getDescription(); ?></td>
                 </tr>
               <?php } ?>
+              
               <?php if (isset($_POST['name'])) { ?>
                 <tr>
                   <td><?php echo $_POST['name']; ?></td>
