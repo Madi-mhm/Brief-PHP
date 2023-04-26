@@ -6,11 +6,10 @@ class DBManager {
     public function __construct() {
         try {
             $this->bdd = new PDO (
-                'mysql:host=localhost;dbname=shop;charset=utf8',
+                'mysql:host=localhost;dbname=brief;charset=utf8',
                 'root',
                 'root'
             );
-            echo('Test');
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
         }
