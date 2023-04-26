@@ -1,4 +1,19 @@
-<?php ?>
+<?php 
+require './SponsorManager.php';
+
+$sponsorManager = new SponsorManager();
+$getAllSponsor = $sponsorManager->getAllSponsor();
+
+if (!empty($_POST['brand']) ) {
+    $newSponsor = new Sponsor();
+
+    $newSponsor->setBrand($_POST['brand']);
+    
+
+    $sponsorManager->create($newSponsor);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -18,10 +33,8 @@
                 <div class="contenu">
                     <div class="boite">
                         <label>Brand</label>
-                        <input type="text" name="name" minlength="3" maxlength="50">
+                        <input type="text" name="brnad" minlength="3" maxlength="50">
                     </div>
-                   
-
                 </div>
             </div>
             <div class="pied-formulaire">

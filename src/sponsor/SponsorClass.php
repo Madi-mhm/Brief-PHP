@@ -10,7 +10,7 @@ class Sponsor {
         $this -> id = $id;
     }
     public function getBrand(){
-        return $this->id;
+        return $this->brand;
     }
     public function setBrand($brand){
         $this -> brand = $brand;
