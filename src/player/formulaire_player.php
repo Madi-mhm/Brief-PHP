@@ -10,6 +10,8 @@
     <title>Brief php</title>
 </head>
 <body>
+    <a href="../../index.php"><button class="homeBtn">Home</button></a>
+
     <section class="page">
         <form method="POST" action="">
            <h1>Player</h1>

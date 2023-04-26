@@ -84,3 +84,15 @@ form .pied-formulaire button:hover {
 }
 
 
+.homeBtn{
+    color: white;
+    background-color: #747cdf;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: 250ms;
+}
+
+.homeBtn:hover{
+    background-color: #5961d1;
+}
+
