@@ -1,6 +1,6 @@
 <?php 
 
-// require ("./SponsorClass.php");
+require ("./SponsorClass.php");
 require ("../DBManager.php");
 
 class SponsorManager extends DBManager {
