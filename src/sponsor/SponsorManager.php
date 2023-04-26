@@ -1,6 +1,6 @@
 <?php 
 
-// require ("./SponsorClass.php");
+require ("./SponsorClass.php");
 require ("../DBManager.php");
 
 class SponsorManager extends DBManager {
@@ -25,7 +25,7 @@ public function create($sponsor){
     $query = $this->getConnexion()->prepare($request);
 
     $query = execute([
-        $sponsor->getId, $sponsor->getBrand
+        $sponsor->getId(), $sponsor->getBrand()
     ]);
 
     // Rafraichie la page

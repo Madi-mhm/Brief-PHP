@@ -1,10 +1,19 @@
 <?php 
 
-require ('./SponsorClass.php');
-$newSponsor = new Sponsor;
-
 require('./SponsorManager.php');
 $sponsorManager = new SponsorManager();
+
+
+if(isset($_POST['submit'])){
+    $newSponsor = new Sponsor();
+    $newSponsor->setBrand($_POST['brand']);
+
+    $sponsorManager->create($newSponsor);
+
+    header('Refresh: 0');
+
+}
+
 $getAllSponsor = $sponsorManager->getAllSponsor();
 
 ?>
@@ -25,21 +34,13 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Brand</th>
                     </tr>
                 </thead>
                 <tbody>
                     <?php foreach ($getAllSponsor as $sponsor) { ?>
                         <tr>
-                          <td><?php echo $sponsor->getId(); ?></td>
-                          <td><?php echo $sponsor->getBrand(); ?></td>
-                        </tr>
-                      <?php } ?>
-                      <?php if (isset($_POST['brand'])) { ?>
-                        <tr>
-                          <td><?php echo $_POST['id']; ?></td>
-                          <td><?php echo $_POST['brand']; ?></td>
+                            <td><?php echo $sponsor->getBrand(); ?></td>
                         </tr>
                       <?php } ?>
                     </tbody>

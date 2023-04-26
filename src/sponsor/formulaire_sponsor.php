@@ -1,4 +1,4 @@
-<?php 
+<!-- <?php 
 require './SponsorManager.php';
 
 $sponsorManager = new SponsorManager();
@@ -13,7 +13,7 @@ if (!empty($_POST['brand']) ) {
     $sponsorManager->create($newSponsor);
 }
 
-?>
+?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -33,12 +33,12 @@ if (!empty($_POST['brand']) ) {
                 <div class="contenu">
                     <div class="boite">
                         <label>Brand</label>
-                        <input type="text" name="brnad" minlength="3" maxlength="50">
+                        <input type="text" name="brand" minlength="3" maxlength="50">
                     </div>
                 </div>
             </div>
             <div class="pied-formulaire">
-                <button name="submit"><strong>submit</strong></button>
+                <button name="submit" value="add sponsor" ><strong>submit</strong></button>
             </div>
            </div>
         </form>
