@@ -4,6 +4,11 @@
  $managerPlayer = new ManagerPlayer();
  $allPlayers = $managerPlayer->getAllPlayers();
 
+ // Gère la suppression
+ if(isset($_GET['delete'])) {
+    $managerPlayer->delete($_GET['delete']);
+ }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +33,7 @@
                 <th>Ville</th>
                 <th>Equipe</th>
                 <th>Jeu</th>
+                <th>Supprimer</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +44,7 @@
                   <td><?php echo $player->getCity(); ?></td>
                   <td><?php echo $player->getTeamId(); ?></td>
                   <td><?php echo $player->getGameId(); ?></td>
+                  <td><a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a></td>
                 </tr>
               <?php } ?>
               <?php if (isset($_POST['first_name'])) { ?>

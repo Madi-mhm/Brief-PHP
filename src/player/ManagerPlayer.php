@@ -15,14 +15,14 @@ class ManagerPlayer extends DBManager {
 
         $players = [];
 
-        foreach($res as $player) {
+        foreach($res as $row) {
           $newPlayer = new Player();
-          $newPlayer->setId($player['id']);
-          $newPlayer->setFirstName($player['first_name']);
-          $newPlayer->setSecondName($player['second_name']);
-          $newPlayer->setCity($player['city']);
-          $newPlayer->setTeamId($player['team_id']);
-          $newPlayer->setGameId($player['game_id']);
+          $newPlayer->setId($row['id']);
+          $newPlayer->setFirstName($row['first_name']);
+          $newPlayer->setSecondName($row['second_name']);
+          $newPlayer->setCity($row['city']);
+          $newPlayer->setTeamId($row['team_id']);
+          $newPlayer->setGameId($row['game_id']);
 
           $players[] = $newPlayer;
         }
@@ -74,21 +74,38 @@ class ManagerPlayer extends DBManager {
     header('Refresh:0');
   }
 
-   public function delete($playerId) {
-    if ($playerId) {
-        $playerToDelete = $this->findById($playerId);
+   public function findById($playerId) {
+  $request = 'SELECT * FROM player WHERE id = :id';
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([':id' => $playerId]);
+  $row = $query->fetch();
 
-        if ($playerToDelete) {
-            $request = 'DELETE FROM player WHERE id = ' . $playerId;
-            $query = $this->getConnexion()->prepare($request);
-            $query->execute();
+  if ($row) {
+      $newPlayer = new Player();
+      $newPlayer->setId($row['id']);
+      $newPlayer->setFirstName($row['first_name']);
+      $newPlayer->setSecondName($row['second_name']);
+      $newPlayer->setCity($row['city']);
+      $newPlayer->setTeamId($row['team_id']);
+      $newPlayer->setGameId($row['game_id']);
+      return $newPlayer;
+  }
 
-            header('Location: admin_player.php');
-            exit();
-        }
-    }
+  return null;
 }
-  
+
+  public function delete($playerId) {
+     $playerToDelete = $this->findById($playerId);
+     if($playerToDelete) {
+       $request = 'DELETE from player WHERE id = ' . $playerId;
+       $query = $this->getConnexion()->prepare($request);
+       $query->execute();
+
+       header('Location:admin_player.php');
+       exit();
+     }
+  }
+ 
 }
 
 ?>
