@@ -46,7 +46,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                             <td><?php echo $sponsor->getId(); ?></td>
                             <td><?php echo $sponsor->getBrand(); ?></td>
                             <td><?php echo $sponsor->getTeam_id(); ?></td>
-                            <td><a class="trash" href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"></a></td>
+                            <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
 
                         </tr>
                     <?php } ?>
