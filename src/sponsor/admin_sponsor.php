@@ -28,7 +28,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
 </head>
 <body>
     <section class="page_admin">
-        <h1>Administration game page</h1>
+        <h1>Administration sponsor page</h1>
         <div class="tab">
             <table>
                 <thead>
