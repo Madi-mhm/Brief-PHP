@@ -97,14 +97,49 @@ form .pied-formulaire button:hover {
 }
 
 .homeBtn{
-    color: white;
-    background-color: #747cdf;
-    padding: 5px 10px;
-    cursor: pointer;
+    background-image: url(../images/home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
     transition: 250ms;
+    border-radius: 5px;
 }
 
 .homeBtn:hover{
     background-color: #5961d1;
+
+    width: 55px;
+    height: 55px;
 }
+
+.adminBtn{
+    background-image: url(../images/admin.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    background-color: #c74141;
+    border-radius: 5px;
+    transition: 250ms;
+}
+
+.adminBtn:hover{
+    width: 55px;
+    height: 55px;
+}
+
+.topButton {
+    display: flex;
+}
+
+
 

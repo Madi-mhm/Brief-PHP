@@ -33,7 +33,10 @@ if (!empty($_POST['brand']) ) {
     <title>Formulaire Sponsor</title>
 </head>
 <body>
-    <a href="../../index.php"><button class="homeBtn">Home</button></a>
+<section class="topButton">
+    <a class="homeBtn" href="../../index.php"></a>
+    <a class="adminBtn" href="./admin_sponsor.php"></a>
+</section>
     <section class="page">
         <form method="POST" action="">
            <h1>Sponsor</h1>

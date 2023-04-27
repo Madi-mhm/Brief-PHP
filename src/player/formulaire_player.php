@@ -32,8 +32,10 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
     <title>Brief php</title>
 </head>
 <body>
-    <a href="../../index.php"><button class="homeBtn">Home</button></a>
-
+<section class="topButton">
+    <a class="homeBtn" href="../../index.php"></a>
+    <a class="adminBtn" href="./admin_player.php"></a>
+</section>
     <section class="page">
         <form method="POST" action="">
            <h1>Player</h1>
