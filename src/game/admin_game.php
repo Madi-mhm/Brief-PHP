@@ -4,6 +4,13 @@ require('./ManagerGame.php');
 $managerGame = new ManagerGame();
 $allGames = $managerGame->getAllGames();
 
+
+// Gère la suppression
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+  $managerGame->delete($_GET['delete']);
+}
+
+
 ?>
 
 <!DOCTYPE html>
@@ -26,6 +33,7 @@ $allGames = $managerGame->getAllGames();
                 <th>Nom</th>
                 <th>Station</th>
                 <th>Format</th>
+                <th>Suprimer</th>
             </tr>
             </thead>
             <tbody>
@@ -34,6 +42,7 @@ $allGames = $managerGame->getAllGames();
                   <td><?php echo $game->getName(); ?></td>
                   <td><?php echo $game->getStation(); ?></td>
                   <td><?php echo $game->getFormat(); ?></td>
+                  <td><a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a></td>
                 </tr>
               <?php } ?>
               <?php if (isset($_POST['name'])) { ?>
