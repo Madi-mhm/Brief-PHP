@@ -1,8 +1,14 @@
 <?php 
 require('./ManagerTeam.php');
 $managerTeam = new ManagerTeam();
-$allTeams = $managerTeam->getAllTeams();
 
+
+// Gère la suppression
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+  $managerTeam->delete($_GET['delete']);
+}
+
+$allTeams = $managerTeam->getAllTeams();
 ?>
 
 <!DOCTYPE html>
@@ -16,7 +22,7 @@ $allTeams = $managerTeam->getAllTeams();
     <title>Brief php</title>
 </head>
 <body>
-    <section class="page_admin">
+<section class="page_admin">
         <h1>Administration team page</h1>
         <div class="tab">
           <table> 
@@ -24,22 +30,27 @@ $allTeams = $managerTeam->getAllTeams();
             <tr>
                 <th>Nom</th>
                 <th>Description</th>
+                <th>Supprimer</th>
             </tr>
             </thead>
             <tbody>
             <?php foreach ($allTeams as $team) { ?>
-                <tr>
-                  <td><?php echo $team->getName(); ?></td>
-                  <td><?php echo $team->getDescription(); ?></td>
-                </tr>
-              <?php } ?>
+    <tr>
+        <td><?php echo $team->getName(); ?></td>
+        <td><?php echo $team->getDescription(); ?></td>
+        <td>
+            
+        <a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a>
+        </td>
+    </tr>
+<?php } ?>
               
-              <?php if (isset($_POST['name'])) { ?>
+            <?php if (isset($_POST['name'])) { ?>
                 <tr>
-                  <td><?php echo $_POST['name']; ?></td>
-                  <td><?php echo ($_POST['description']); ?></td>
+                    <td><?php echo $_POST['name']; ?></td>
+                    <td><?php echo ($_POST['description']); ?></td>
                 </tr>
-              <?php } ?>
+            <?php } ?>
             </tbody>
           </table>
           <a href="../../index.php"><button class="btn">RETOUR</button></a>

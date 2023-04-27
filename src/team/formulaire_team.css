@@ -24,6 +24,7 @@ h1 {
     text-align: center;
     margin-top: 0;
 }
+
 form .séparation {
     border-top: 1px solid rgba(0, 0, 0, 0.288);
 }
@@ -47,12 +48,6 @@ form .corps-formulaire .boite {
     flex-direction: column;
     width: 100%;
 }
-
-form .séparation {
-    border-top: 1px solid rgba(0, 0, 0, 0.288);
-}
-
-
 
 form .corps-formulaire .contenu .boite input {
     margin-top: 5px;
@@ -83,16 +78,20 @@ form .pied-formulaire button:hover {
      transform: scale(1.1);
 }
 
-
 .homeBtn{
-    color: white;
-    background-color: #747cdf;
-    padding: 5px 10px;
-    cursor: pointer;
-    transition: 250ms;
+    background-image: url(../images/home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
 }
 
 .homeBtn:hover{
     background-color: #5961d1;
+    border-radius: 5px;
 }
 
