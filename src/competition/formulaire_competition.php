@@ -30,7 +30,10 @@ if (!empty($_POST['name']) && isset($_POST['description']) && isset($_POST['form
     <title>Brief php</title>
 </head>
 <body>
-    <a href="../../index.php"><button class="homeBtn">Home</button></a>
+<section class="topButton">
+    <a class="homeBtn" href="../../index.php"></a>
+    <a class="adminBtn" href="./admin_competition.php"></a>
+</section>
     <section class="page">
         <form method="POST" action="">
            <h1>Competition</h1>

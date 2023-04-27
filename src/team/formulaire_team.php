@@ -26,7 +26,11 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
     <title>Brief php</title>
 </head>
 <body>
+    <section class="topButton">
     <a class="homeBtn" href="../../index.php"></a>
+    <a class="adminBtn" href="./admin_team.php"></a>
+</section>
+    
     <section class="page">
         <form method="POST" action="">
            <h1>Equipes</h1>

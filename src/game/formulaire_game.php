@@ -26,7 +26,10 @@ if (!empty($_POST['name']) && isset($_POST['station']) && isset($_POST['format']
     <title>Brief php</title>
 </head>
 <body>
-    <a href="../../index.php"><button class="homeBtn">Home</button></a>
+<section class="topButton">
+    <a class="homeBtn" href="../../index.php"></a>
+    <a class="adminBtn" href="./admin_game.php"></a>
+</section>
     <section class="page">
         <form method="POST" action="">
            <h1>Game</h1>
