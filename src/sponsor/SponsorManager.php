@@ -40,7 +40,7 @@ public function create($sponsor){
     
 }
 
-// teat´m manager
+// team manager
 public function getAllTeams() {
     $res = $this->getConnexion()->query('SELECT * FROM team');   
  
