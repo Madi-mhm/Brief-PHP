@@ -1,8 +1,7 @@
 <?php 
 
-require ('../DBManager.php');
-
-require ('./TeamClass.php');
+require_once ('../DBManager.php');
+require_once ('./TeamClass.php');
 
 
 

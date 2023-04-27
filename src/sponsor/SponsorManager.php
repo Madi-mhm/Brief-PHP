@@ -1,7 +1,9 @@
 <?php 
 
-require ("./SponsorClass.php");
-require ("../DBManager.php");
+require_once ("./SponsorClass.php");
+require_once ("../DBManager.php");
+require ('../team/TeamClass.php');
+
 
 class SponsorManager extends DBManager {
 
@@ -37,6 +39,24 @@ public function create($sponsor){
     header('Refresh:');
     
 }
+
+// teat´m manager
+public function getAllTeams() {
+    $res = $this->getConnexion()->query('SELECT * FROM team');   
+ 
+    $teams = [];
+ 
+    foreach ($res as $row) {
+      $team = new Team();
+      $team->setId($row['id']);
+      $team->setName($row['name']);
+      $team->setDescription($row['description']);
+ 
+      $teams[] = $team;
+    }
+    return $teams;
+ }
 }
+
 
 ?>

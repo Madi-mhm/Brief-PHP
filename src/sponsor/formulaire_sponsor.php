@@ -1,9 +1,11 @@
 <?php 
-require './SponsorManager.php';
+require_once './SponsorManager.php';
+
 
 $sponsorManager = new SponsorManager();
+$getSponsorManagerTeam = $sponsorManager->getAllTeams();
+
 $getAllSponsor = $sponsorManager->getAllSponsor();
-var_dump(count($getAllSponsor));
 
 if (!empty($_POST['brand']) ) {
     $newSponsor = new Sponsor();
@@ -43,8 +45,8 @@ if (!empty($_POST['brand']) ) {
                 <div class="dropDown">
                         <label for="format">Format</label>
                         <select name="team_name">
-                            <?php foreach ($getAllSponsor as $sponsor) { ?>
-                            <option value="<?php echo $sponsor->getTeam_id(); ?>"><?php echo $sponsor->getTeam_name(); ?></option>
+                            <?php foreach ($getSponsorManagerTeam as $team) { ?>
+                            <option value=<?php echo '"' .  $team->getId() . '"' ?> ><?php echo $team->getName(); ?></option>
                             <?php } ?>
                         </select>
                 </div>
