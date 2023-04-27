@@ -4,6 +4,11 @@
  $managerCompetition = new ManagerCompetition();
  $allCompetitions = $managerCompetition->getAllCompetitions();
 
+ // Gère la suppression
+ if(isset($_GET['delete'])) {
+    $managerCompetition->delete($_GET['delete']);
+ }
+
 ?>
 
 <!DOCTYPE html>
@@ -28,6 +33,7 @@
                 <th>Ville</th>
                 <th>Format</th>
                 <th>Récompense</th>
+                <th>Supprimer</th>
             </tr>
             </thead>
             <tbody>
@@ -38,6 +44,7 @@
                   <td><?php echo $competition->getCity(); ?></td>
                   <td><?php echo $competition->getFormat(); ?></td>
                   <td><?php echo $competition->getCashPrize(); ?></td>
+                  <td><a href="admin_competition.php?delete=<?php echo $competition->getId(); ?>" class="trash"></a></td>
                 </tr>
               <?php } ?>
               <?php if (isset($_POST['name'])) { ?>
