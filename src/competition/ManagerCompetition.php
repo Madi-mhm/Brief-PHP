@@ -10,14 +10,14 @@ class ManagerCompetition extends DBManager {
 
         $competitions = [];
 
-        foreach($res as $competition) {
+        foreach($res as $row) {
           $newCompetition = new Competition();
-           $newCompetition->setId($competition['id']);
-          $newCompetition->setName($competition['name']);
-          $newCompetition->setDescription($competition['description']);
-          $newCompetition->setCity($competition['city']);
-          $newCompetition->setFormat($competition['format']);
-          $newCompetition->setCashPrize($competition['cash_prize']);
+          $newCompetition->setId($row['id']);
+          $newCompetition->setName($row['name']);
+          $newCompetition->setDescription($row['description']);
+          $newCompetition->setCity($row['city']);
+          $newCompetition->setFormat($row['format']);
+          $newCompetition->setCashPrize($row['cash_prize']);
 
           $competitions[] = $newCompetition;
         }
@@ -33,6 +33,38 @@ class ManagerCompetition extends DBManager {
 
     // Rafraichie la page
     header('Refresh:0');
+  }
+
+  public function findById($competitionId) {
+  $request = 'SELECT * FROM competition WHERE id = :id';
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([':id' => $competitionId]);
+  $row = $query->fetch();
+
+  if ($row) {
+      $newCompetition = new Competition();
+      $newCompetition->setId($row['id']);
+      $newCompetition->setName($row['name']);
+      $newCompetition->setDescription($row['description']);
+      $newCompetition->setCity($row['city']);
+      $newCompetition->setFormat($row['format']);
+      $newCompetition->setCashPrize($row['cash_prize']);
+      return $newCompetition;
+  }
+
+  return null;
+}
+
+  public function delete($competitionId) {
+     $competitionToDelete = $this->findById($competitionId);
+     if($competitionToDelete) {
+       $request = 'DELETE from competition WHERE id = ' . $competitionId;
+       $query = $this->getConnexion()->prepare($request);
+       $query->execute();
+
+       header('Location:admin_competition.php');
+       exit();
+     }
   }
 }
 
