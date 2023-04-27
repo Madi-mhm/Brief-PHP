@@ -1,4 +1,26 @@
-<?php ?>
+<?php 
+
+require './ManagerPlayer.php';
+
+$managerPlayer = new ManagerPlayer();
+
+$allPlayers = $managerPlayer->getAllPlayers();
+$allTeams = $managerPlayer->getAllTeams(); 
+$allGames = $managerPlayer->getAllGames(); 
+
+if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST['city']) && isset($_POST['team_id']) && isset($_POST['game_id'])) {
+    $newPlayer = new Player();
+
+    $newPlayer->setFirstName($_POST['first_name']);
+    $newPlayer->setSecondName($_POST['second_name']);
+    $newPlayer->setCity($_POST['city']);
+    $newPlayer->setTeamId(intval($_POST['team_id']));
+    $newPlayer->setGameId(intval($_POST['game_id']));
+
+    $managerPlayer->create($newPlayer);
+}
+
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -19,18 +41,33 @@
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label>First-name</label>
-                        <input type="text" name="name" minlength="3" maxlength="50">
+                        <label for="first_name">Prénom</label>
+                        <input type="text" name="first_name">
                     </div>
                     <div class="boite">
-                        <label>Last_name</label>
-                        <input type="text" name="description" minlength="3" maxlength="1000">
+                        <label for="second_name">Nom</label>
+                        <input type="text" name="second_name">
                     </div>
                     <div class="boite">
-                        <label>City</label>
-                        <input type="text" name="city" minlength="3" maxlength="50">
+                        <label for="city">Ville</label>
+                        <input type="text" name="city">
                     </div>
-                    
+                   <div class="boite">
+                        <label for="team_id">Equipe</label>
+                        <select type="select" name="team_id">
+                           <?php foreach($allTeams as $team) { ?>
+                                  <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
+                           <?php } ?>
+                        </select>
+                    </div>
+                    <div class="boite">
+                        <label for="game_id">Jeu</label>
+                        <select type="select" name="game_id">
+                            <?php foreach($allGames as $game) { ?>
+                                   <option value="<?= $game->getId() ?>"><?= $game->getName() ?></option>
+                            <?php } ?>
+                        </select>
+                    </div>
 
                 </div>
             </div>
@@ -43,6 +80,4 @@
     <script type="module" src="player.js"></script> 
 
 </body>
-
-
 </html>
