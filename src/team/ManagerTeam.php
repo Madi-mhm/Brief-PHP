@@ -1,10 +1,8 @@
 <?php 
 
-require ('../DBManager.php');
+require_once ('../DBManager.php');
 
 require ('./TeamClass.php');
-
-
 
 class ManagerTeam extends DBManager {
 
