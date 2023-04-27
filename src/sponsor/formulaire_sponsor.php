@@ -3,14 +3,16 @@ require './SponsorManager.php';
 
 $sponsorManager = new SponsorManager();
 $getAllSponsor = $sponsorManager->getAllSponsor();
+var_dump(count($getAllSponsor));
 
 if (!empty($_POST['brand']) ) {
     $newSponsor = new Sponsor();
 
     $newSponsor->setBrand($_POST['brand']);
+    $newSponsor->setTeam_name($_POST['team_name']);
     
-
     $sponsorManager->create($newSponsor);
+
 }
 
 ?>
@@ -40,18 +42,12 @@ if (!empty($_POST['brand']) ) {
                 </div>
                 <div class="dropDown">
                         <label for="format">Format</label>
-                        <select type="select" name="format">
-                            <option value="mmo">MMO</option>
-                            <option value="mmorpg">MMORPG</option>
-                            <option value="moba">MOBA</option>
-                            <option value="fps">FPS</option>
-                            <option value="battle_royale">BATTLE ROYALE</option>
-                            <option value="jeu_de_carte_à_sélectionner">JEU DE CARTES A SELECTIONNER</option>
-                            <option value="sport">SPORT</option>
-                            <option value="fps_tactique">FPS TACTIQUE</option>
-                            <option value="combat">COMBAT</option>
+                        <select name="team_name">
+                            <?php foreach ($getAllSponsor as $sponsor) { ?>
+                            <option value="<?php echo $sponsor->getTeam_id(); ?>"><?php echo $sponsor->getTeam_name(); ?></option>
+                            <?php } ?>
                         </select>
-                    </div>
+                </div>
                 <div class="pied-formulaire">
                     <button name="submit" value="add sponsor" ><strong>submit</strong></button>
                 </div>

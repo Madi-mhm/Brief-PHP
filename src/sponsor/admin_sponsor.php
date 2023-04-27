@@ -29,6 +29,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                     <tr>
                         <td>ID</td>
                         <th>Brand</th>
+                        <th>Team</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -36,13 +37,15 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                         <tr>
                             <td><?php echo $sponsor->getId(); ?></td>
                             <td><?php echo $sponsor->getBrand(); ?></td>
+                            <td><?php echo $sponsor->getTeam_name(); ?></td>
                         </tr>
                     <?php } ?>
 
-                    <?php if (isset($_POST['brand'])) { ?>
+                    <?php if (isset($_POST['submit'])) { ?>
                         <tr>
                           <td><?php echo $_POST['id']; ?></td>
                           <td><?php echo $_POST['brand']; ?></td>
+                          <td><?php echo $_POST['team_name']; ?></td>
                         </tr>
                     <?php } ?>
                       
