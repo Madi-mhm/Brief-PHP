@@ -2,10 +2,17 @@
 
 require('./SponsorManager.php');
 $sponsorManager = new SponsorManager();
+
+
+// Gère la suppression
+if (isset($_GET['delete']) && !empty($_GET['delete'])) {
+    $sponsorManager->delete($_GET['delete']);
+  }
+
+
+
 $getAllSponsor = $sponsorManager->getAllSponsor();
-
-
-
+  
 
 
 ?>
@@ -30,6 +37,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                         <td>ID</td>
                         <th>Brand</th>
                         <th>Team</th>
+                        <td>Suprimer</td>
                     </tr>
                 </thead>
                 <tbody>
@@ -37,15 +45,18 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                         <tr>
                             <td><?php echo $sponsor->getId(); ?></td>
                             <td><?php echo $sponsor->getBrand(); ?></td>
-                            <td><?php echo $sponsor->getTeam_name(); ?></td>
+                            <td><?php echo $sponsor->getTeam_id(); ?></td>
+                            <td><a class="trash" href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"></a></td>
+
                         </tr>
                     <?php } ?>
+                    
 
                     <?php if (isset($_POST['submit'])) { ?>
                         <tr>
                           <td><?php echo $_POST['id']; ?></td>
                           <td><?php echo $_POST['brand']; ?></td>
-                          <td><?php echo $_POST['team_name']; ?></td>
+                          <td><?php echo $_POST['team_id']; ?></td>
                         </tr>
                     <?php } ?>
                       

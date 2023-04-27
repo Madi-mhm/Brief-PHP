@@ -3,15 +3,19 @@ require_once './SponsorManager.php';
 
 
 $sponsorManager = new SponsorManager();
-$getSponsorManagerTeam = $sponsorManager->getAllTeams();
+
 
 $getAllSponsor = $sponsorManager->getAllSponsor();
+$allTeams = $sponsorManager->getAllTeams(); 
+
+
 
 if (!empty($_POST['brand']) ) {
     $newSponsor = new Sponsor();
 
     $newSponsor->setBrand($_POST['brand']);
-    $newSponsor->setTeam_name($_POST['team_name']);
+    // $newSponsor->setTeam_name($_POST['team_name']);
+    $newSponsor->setTeam_id(intval($_POST['team_id']));
     
     $sponsorManager->create($newSponsor);
 
@@ -44,10 +48,11 @@ if (!empty($_POST['brand']) ) {
                 </div>
                 <div class="dropDown">
                         <label for="format">Format</label>
-                        <select name="team_name">
-                            <?php foreach ($getSponsorManagerTeam as $team) { ?>
-                            <option value=<?php echo '"' .  $team->getId() . '"' ?> ><?php echo $team->getName(); ?></option>
+                        <select type="select" name="team_id">
+                            <?php foreach ($allTeams as $team) { ?>
+                            <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
                             <?php } ?>
+
                         </select>
                 </div>
                 <div class="pied-formulaire">

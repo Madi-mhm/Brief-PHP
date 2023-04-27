@@ -56,7 +56,43 @@ public function getAllTeams() {
     }
     return $teams;
  }
+
+
+ public function findById($sponsorId) {
+    $request = 'SELECT * FROM sponsor WHERE id = :id';
+    $query = $this->getConnexion()->prepare($request);
+    $query->execute([':id' => $sponsorId]);
+    $row = $query->fetch();
+  
+    if ($row) {
+        $sponsor = new Sponsor();
+        $sponsor->setId($row['id']);
+        $sponsor->setBrand($row['brand']);
+        $sponsor->setTeam_id($row['team_id']);
+        return $sponsor;
+    }
+  
+    return null;
+  }
+
+
+ public function delete($sponsorId) {
+    if ($sponsorId) {
+        $sponsorToDelete = $this->findById($sponsorId);
+
+        if ($sponsorToDelete) {
+            $request = 'DELETE FROM sponsor WHERE id = ' . $sponsorId;
+            $query = $this->getConnexion()->prepare($request);
+            $query->execute();
+
+            header('Location: admin_sponsor.php');
+            exit();
+        }
+    }
 }
+
+}
+
 
 
 ?>
