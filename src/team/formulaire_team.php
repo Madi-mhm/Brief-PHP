@@ -3,6 +3,7 @@
 $managerTeam = new ManagerTeam();
 $allTeams = $managerTeam->getAllTeams();
 
+// gère la création
 if (isset($_POST['name']) && isset($_POST['description'])) {
     $newTeam = new Team();
 
@@ -11,6 +12,7 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
 
     $managerTeam->create($newTeam);
 }
+
 
 ?>
 
@@ -24,21 +26,23 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
     <title>Brief php</title>
 </head>
 <body>
-    <a href="../../index.php"><button class="homeBtn">Home</button></a>
+    <a class="homeBtn" href="../../index.php"></a>
     <section class="page">
         <form method="POST" action="">
-           <h1>Team</h1>
+           <h1>Equipes</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label>Name</label>
-                        <input type="text" name="name" maxlength="50">
+                        <label for="name">Nom de l'équipe</label>
+                        <input type="text" name="name">
                     </div>
                     <div class="boite">
-                        <label>Description</label>
-                        <input type="text" name="description" maxlength="1000">
-                    </div>                   
+                        <label for="description">Description</label>
+                        <input type="text" name="description">
+                    </div>
+                   
+
                 </div>
             </div>
             <div class="pied-formulaire">

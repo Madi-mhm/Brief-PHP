@@ -44,7 +44,8 @@ tr:hover {
     color: black;
 }
 
-button {
+
+.btn {
     margin-top: 10px;
     background-color: #c74141;
     color: white;
@@ -56,3 +57,16 @@ button {
     cursor: pointer;
     transition: transform 0.5s;
 }
+
+.trash {
+    background-image: url(../images/trash.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+
+}
+

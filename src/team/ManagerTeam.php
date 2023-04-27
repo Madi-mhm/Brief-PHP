@@ -15,6 +15,7 @@ class ManagerTeam extends DBManager {
  
     foreach ($res as $row) {
       $team = new Team();
+      $team->setId($row['id']);
       $team->setName($row['name']);
       $team->setDescription($row['description']);
  
@@ -22,6 +23,24 @@ class ManagerTeam extends DBManager {
     }
     return $teams;
  }
+
+ public function findById($teamId) {
+  $request = 'SELECT * FROM team WHERE id = :id';
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([':id' => $teamId]);
+  $row = $query->fetch();
+
+  if ($row) {
+      $team = new Team();
+      $team->setId($row['id']);
+      $team->setName($row['name']);
+      $team->setDescription($row['description']);
+      return $team;
+  }
+
+  return null;
+}
+
 public function create($team) {
     // Je prépare ma requête
     $request = 'INSERT INTO team (name, description) VALUE (?, ?)';
@@ -35,6 +54,21 @@ public function create($team) {
     // Rafraichie la page
     header('Refresh:0');
   }
+
+  public function delete($teamId) {
+    if ($teamId) {
+        $teamToDelete = $this->findById($teamId);
+
+        if ($teamToDelete) {
+            $request = 'DELETE FROM team WHERE id = ' . $teamId;
+            $query = $this->getConnexion()->prepare($request);
+            $query->execute();
+
+            header('Location: admin_team.php');
+            exit();
+        }
+    }
+}
 }
 
 ?>
