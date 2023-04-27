@@ -30,17 +30,31 @@ if (!empty($_POST['brand']) ) {
         <form method="POST" action="">
            <h1>Sponsor</h1>
            <div class="séparation">
-            <div class="corps-formulaire">
-                <div class="contenu">
-                    <div class="boite">
-                        <label>Brand</label>
-                        <input type="text" name="brand" minlength="3" maxlength="50">
+                <div class="corps-formulaire">
+                    <div class="contenu">
+                        <div class="boite">
+                            <label>Brand</label>
+                            <input type="text" name="brand" minlength="3" maxlength="50">
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="pied-formulaire">
-                <button name="submit" value="add sponsor" ><strong>submit</strong></button>
-            </div>
+                <div class="dropDown">
+                        <label for="format">Format</label>
+                        <select type="select" name="format">
+                            <option value="mmo">MMO</option>
+                            <option value="mmorpg">MMORPG</option>
+                            <option value="moba">MOBA</option>
+                            <option value="fps">FPS</option>
+                            <option value="battle_royale">BATTLE ROYALE</option>
+                            <option value="jeu_de_carte_à_sélectionner">JEU DE CARTES A SELECTIONNER</option>
+                            <option value="sport">SPORT</option>
+                            <option value="fps_tactique">FPS TACTIQUE</option>
+                            <option value="combat">COMBAT</option>
+                        </select>
+                    </div>
+                <div class="pied-formulaire">
+                    <button name="submit" value="add sponsor" ><strong>submit</strong></button>
+                </div>
            </div>
         </form>
     </section>

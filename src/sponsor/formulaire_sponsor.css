@@ -83,6 +83,19 @@ form .pied-formulaire button:hover {
      transform: scale(1.1);
 }
 
+.dropDown{
+    display: flex;
+    flex-direction: column;
+}
+
+.dropDown > * {
+    margin-bottom: 10px;
+}
+
+.dropDown select  {
+    padding: 5px;
+}
+
 .homeBtn{
     color: white;
     background-color: #747cdf;
@@ -94,3 +107,4 @@ form .pied-formulaire button:hover {
 .homeBtn:hover{
     background-color: #5961d1;
 }
+
