@@ -29,7 +29,7 @@ $allTeams = $managerTeam->getAllTeams();
             <tr>
                 <th>Nom</th>
                 <th>Description</th>
-                <th>Supprimer</th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -38,8 +38,10 @@ $allTeams = $managerTeam->getAllTeams();
         <td><?php echo $team->getName(); ?></td>
         <td><?php echo $team->getDescription(); ?></td>
         <td>
-            
+        <section class="crudButton">    
         <a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a>
+        <a href="#" class="edit"></a>
+            </section>
         </td>
     </tr>
 <?php } ?>

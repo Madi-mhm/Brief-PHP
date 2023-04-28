@@ -45,7 +45,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                         <tr>
                             <td><?php echo $sponsor->getId(); ?></td>
                             <td><?php echo $sponsor->getName(); ?></td>
-                            <td><?php echo $sponsor->getTeam_id(); ?></td>
+                            <td><?php echo $sponsor->getTeam_name(); ?></td>
                             <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
                             
 
@@ -57,7 +57,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                         <tr>
                           <td><?php echo $_POST['id']; ?></td>
                           <td><?php echo $_POST['name']; ?></td>
-                          <td><?php echo $_POST['team_id']; ?></td>
+                          <td><?php echo $_POST['team_name']; ?></td>
                         </tr>
                     <?php } ?>
                       

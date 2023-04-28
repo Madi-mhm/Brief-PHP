@@ -51,7 +51,7 @@ if (!empty($_POST['name']) && isset($_POST['description']) && isset($_POST['form
                         <label for="city">Ville</label>
                         <input type="text" name="city">
                     </div>
-                    <div class="boite">
+                    <div class="boite dropDown">
                         <label for="format">Format</label>
                         <select type="select" name="format">
                             <option value="mmo">MMO</option>
