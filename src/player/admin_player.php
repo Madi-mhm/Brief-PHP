@@ -58,7 +58,7 @@
               <?php } ?>
             </tbody>
           </table>
-          <a href="../../index.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_player.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
 </body>
