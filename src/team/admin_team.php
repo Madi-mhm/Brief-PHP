@@ -7,6 +7,8 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $managerTeam->delete($_GET['delete']);
 }
 
+
+// gère l'edit
 if (isset($_POST['update'])) {
     $teamId = $_POST['id'];
     $name = $_POST['name'];
@@ -42,6 +44,7 @@ if (isset($_GET['edit'])) {
                 <th>Nom</th>
                 <th>Description</th>
                 <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -49,12 +52,12 @@ if (isset($_GET['edit'])) {
     <tr>
         <td><?php echo $team->getName(); ?></td>
         <td><?php echo $team->getDescription(); ?></td>
-        <td>
-        <section class="crudButton">    
-        <a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a>
-        <a href="admin_team.php?edit=<?php echo $team->getId(); ?>" class="edit"></a>
-            </section>
-        </td>
+        
+          
+        <td><a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a></td>
+        <td><a href="admin_team.php?edit=<?php echo $team->getId(); ?>" class="edit"></a></td>
+            
+        
     </tr>
 <?php } ?>
             </tbody>
@@ -64,7 +67,7 @@ if (isset($_GET['edit'])) {
     </section>
 
     <!-- POPPUP -->
-    <section class="editPoppup ">
+    <section class="editPoppup">
         <div class="poppupContainer">
         <form method="POST" action="">
            <h1>Equipes</h1>
