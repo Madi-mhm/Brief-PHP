@@ -123,4 +123,7 @@ form .pied-formulaire button:hover {
     display: flex;
 }
 
+.dropDown select {
+    padding: 5px;
+}
 
