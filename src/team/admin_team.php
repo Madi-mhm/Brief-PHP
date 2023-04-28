@@ -7,6 +7,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     $managerTeam->delete($_GET['delete']);
 }
 
+// update data
 if (isset($_POST['update'])) {
     $teamId = $_POST['id'];
     $name = $_POST['name'];

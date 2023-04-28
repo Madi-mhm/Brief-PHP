@@ -20,7 +20,20 @@ require_once './SponsorManager.php';
 $sponsorManager = new SponsorManager();
 $allTeams = $sponsorManager->getAllTeams(); 
 
+// Update data
+if (isset($_POST['update'])) {
+    $sponsorId = $_POST['id'];
+    $name = $_POST['name'];
+    $team_id = $_POST['team_id'];
 
+    $sponsorManager->edit($sponsorId, $name, $team_id);
+}
+
+$sponsorToEdit ;
+if (isset($_GET['edit'])) {
+    $sponsorId = $_GET['edit'];
+    $sponsorToEdit = $sponsorManager->findById($sponsorId);
+}
 ?>
 
 <!DOCTYPE html>
@@ -46,7 +59,9 @@ $allTeams = $sponsorManager->getAllTeams();
                         <td>ID</td>
                         <th>Name</th>
                         <th>Team</th>
-                        <td>Suprimer</td>
+                        <td></td>
+                        <td></td>
+
                     </tr>
                 </thead>
                 <tbody>
@@ -56,6 +71,8 @@ $allTeams = $sponsorManager->getAllTeams();
                             <td><?php echo $sponsor->getName(); ?></td>
                             <td><?php echo $sponsor->getTeam_name(); ?></td>
                             <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
+                            <td> <a href="admin_sponsor.php?edit=<?php echo $sponsor->getId(); ?>" class="edit"></a></td>
+
                             
 
                         </tr>
@@ -80,13 +97,15 @@ $allTeams = $sponsorManager->getAllTeams();
     <section class="sponsorPopup">
         <div class="popupContainer">
         <form method="POST" action="">
+            <input type="hidden" name="id" value="<?php echo $sponsorToEdit ? $sponsorToEdit->getId() : ''; ?>">
+
            <h1>Sponsor</h1>
            <div class="séparation">
                 <div class="corps-formulaire">
                     <div class="contenu">
                         <div class="boite">
                             <label>Name</label>
-                            <input type="text" name="name" minlength="3" maxlength="50">
+                            <input type="text" name="name" value="<?php echo $sponsorToEdit ? $sponsorToEdit->getName() : ''; ?>" >
                         </div>
                     </div>
                 </div>
@@ -94,14 +113,15 @@ $allTeams = $sponsorManager->getAllTeams();
                         <label for="format">Format</label>
                         <select type="select" name="team_id">
                             <?php foreach ($allTeams as $team) { ?>
-                            <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
+                            <option value="<?= $team->getId(); ?>"  
+                                <?php if($sponsorToEdit && $sponsorToEdit->getTeam_Id() == $team->getId()) echo 'selected'; ?>> <?= $team->getName(); ?> </option>
                             <?php } ?>
 
                         </select>
                 </div>
                 <div class="pied-formulaire">
-                    <button class="cancelButton" name="submit" value="add sponsor" ><strong>Cancel</strong></button>
-                    <button class="submitButton" name="submit" value="add sponsor" ><strong>Submit</strong></button>
+                    <button class="cancelButton" value="add sponsor" ><strong>Cancel</strong></button>
+                    <button class="submitButton" name="update" value="add sponsor" ><strong>Update</strong></button>
                 </div>
            </div>
         </form>
