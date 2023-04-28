@@ -56,7 +56,6 @@ if (!empty($_POST['name']) && isset($_POST['station']) && isset($_POST['format']
            </div>
         </form>
     </section>
-    <script type="module" src="game.js"></script> 
 
 </body>
 

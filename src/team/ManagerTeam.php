@@ -7,7 +7,7 @@ require ('./TeamClass.php');
 class ManagerTeam extends DBManager {
 
   public function getAllTeams() {
-    $res = $this->getConnexion()->query('SELECT * FROM team');   
+    $res = $this->getConnexion()->query('SELECT * FROM team Order by team.id ASC');   
  
     $teams = [];
  
