@@ -6,6 +6,29 @@ body {
     color: white;
 }
 
+
+.homeBtn{
+    background-image: url(../images/home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    transition: 250ms;
+    border-radius: 5px;
+    margin: 15px;
+    position: absolute;
+    
+}
+
+.homeBtn:hover{
+    background-color: #5961d1;
+    width: 55px;
+    height: 55px;
+}
+
 .page_admin {
     padding: 25px 80px;
 }
