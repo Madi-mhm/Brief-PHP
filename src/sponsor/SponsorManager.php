@@ -91,6 +91,15 @@ public function getAllTeams() {
     }
 }
 
+public function edit($name, $team_id)
+{
+  $request = 'UPDATE sponsor SET name = ? , team_id = ? WHERE id = ' . $sponsor.$id;
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([$name, $team_id]);
+  header('Location:admin_team.php');
+  exit();
+}
+
 }
 
 

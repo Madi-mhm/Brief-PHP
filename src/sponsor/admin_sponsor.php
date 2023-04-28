@@ -15,6 +15,12 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
   
 
 
+
+require_once './SponsorManager.php';
+$sponsorManager = new SponsorManager();
+$allTeams = $sponsorManager->getAllTeams(); 
+
+
 ?>
 
 <!DOCTYPE html>
@@ -69,6 +75,36 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                 <tbody>
             </table>
             <a href="./formulaire_sponsor.php"><button class="btn">RETOUR</button></a>
+        </div>
+    </section>
+    <section class="sponsorPopup">
+        <div class="popupContainer">
+        <form method="POST" action="">
+           <h1>Sponsor</h1>
+           <div class="séparation">
+                <div class="corps-formulaire">
+                    <div class="contenu">
+                        <div class="boite">
+                            <label>Name</label>
+                            <input type="text" name="name" minlength="3" maxlength="50">
+                        </div>
+                    </div>
+                </div>
+                <div class="dropDown">
+                        <label for="format">Format</label>
+                        <select type="select" name="team_id">
+                            <?php foreach ($allTeams as $team) { ?>
+                            <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
+                            <?php } ?>
+
+                        </select>
+                </div>
+                <div class="pied-formulaire">
+                    <button class="cancelButton" name="submit" value="add sponsor" ><strong>Cancel</strong></button>
+                    <button class="submitButton" name="submit" value="add sponsor" ><strong>Submit</strong></button>
+                </div>
+           </div>
+        </form>
         </div>
     </section>
 </body>
