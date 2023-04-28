@@ -8,7 +8,8 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
 }
 
 
-// gère l'edit
+// update data
+
 if (isset($_POST['update'])) {
     $teamId = $_POST['id'];
     $name = $_POST['name'];
