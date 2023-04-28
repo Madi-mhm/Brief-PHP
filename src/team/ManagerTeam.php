@@ -67,6 +67,15 @@ public function create($team) {
         }
     }
 }
+
+public function edit($teamId, $name, $description)
+{
+  $request = 'UPDATE team SET name = ? , description = ? WHERE id = ' . $teamId;
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([$name, $description]);
+  header('Location:admin_team.php');
+  exit();
+}
 }
 
 ?>
