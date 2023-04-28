@@ -17,12 +17,7 @@
         <a href="./src/player/formulaire_player.php"><button class="btn">PLAYER</button><a>
         <a href="./src/sponsor/formulaire_sponsor.php"><button class="btn">SPONSOR</button><a>
         <a href="./src/team/formulaire_team.php"><button class="btn">TEAM</button><a>
-        <h1 id="adminH1" >ADMINISTRATION</h1>
-        <a href="./src/game/admin_game.php"><button class="btn">GAME ADMIN</button><a>       
-        <a href="./src/competition/admin_competition.php"><button class="btn">COMPETITION ADMIN</button><a>
-        <a href="./src/player/admin_player.php"><button class="btn">PLAYER ADMIN</button><a>
-        <a href="./src/sponsor/admin_sponsor.php"><button class="btn">SPONSOR ADMIN</button><a>
-        <a href="./src/team/admin_team.php"><button class="btn">TEAM ADMIN</button><a>        
+        
     </ul>
 </body>
 

@@ -53,7 +53,7 @@ $allTeams = $managerTeam->getAllTeams();
             <?php } ?>
             </tbody>
           </table>
-          <a href="../../index.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_team.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
 </body>

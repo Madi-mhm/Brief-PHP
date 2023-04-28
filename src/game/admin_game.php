@@ -54,7 +54,7 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
               <?php } ?>
             </tbody>
           </table>
-          <a href="../../index.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_game.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
 </body>
