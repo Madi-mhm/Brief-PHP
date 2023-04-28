@@ -123,7 +123,26 @@ form .pied-formulaire button:hover {
     display: flex;
 }
 
+
+/* Partie responsive  */
+@media screen and (max-width: 640px) {
+   body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   }
+
+   .topButton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
+}
+
+
 .dropDown select {
     padding: 5px;
 }
+
 
