@@ -1,11 +1,10 @@
-<?php 
+<?php
 require('./ManagerTeam.php');
 $managerTeam = new ManagerTeam();
 
-
 // Gère la suppression
 if (isset($_GET['delete']) && !empty($_GET['delete'])) {
-  $managerTeam->delete($_GET['delete']);
+    $managerTeam->delete($_GET['delete']);
 }
 
 if (isset($_POST['update'])) {
@@ -17,6 +16,11 @@ if (isset($_POST['update'])) {
 }
 
 $allTeams = $managerTeam->getAllTeams();
+$teamToEdit = null;
+if (isset($_GET['edit'])) {
+    $teamId = $_GET['edit'];
+    $teamToEdit = $managerTeam->findById($teamId);
+}
 ?>
 
 <!DOCTYPE html>
@@ -53,13 +57,6 @@ $allTeams = $managerTeam->getAllTeams();
         </td>
     </tr>
 <?php } ?>
-              
-            <?php if (isset($_POST['name'])) { ?>
-                <tr>
-                    <td><?php echo $_POST['name']; ?></td>
-                    <td><?php echo ($_POST['description']); ?></td>
-                </tr>
-            <?php } ?>
             </tbody>
           </table>
           <a href="./formulaire_team.php"><button class="btn">RETOUR</button></a>
@@ -76,24 +73,23 @@ $allTeams = $managerTeam->getAllTeams();
                 <div class="contenu">
                     <div class="boite">
                         <label for="name">Nom de l'équipe</label>
-                        <input type="text" name="name">
+                        <input type="text" name="name" value="<?php echo $teamToEdit ? $teamToEdit->getName() : ''; ?>">
                     </div>
                     <div class="boite">
                         <label for="description">Description</label>
-                        <input type="text" name="description">
+                        <input type="text" name="description" value="<?php echo $teamToEdit ? $teamToEdit->getDescription() : ''; ?>">
                     </div>
-                   
+                    <input type="hidden" name="id" value="<?php echo $teamToEdit ? $teamToEdit->getId() : ''; ?>">
 
                 </div>
             </div>
             <div class="pied-formulaire">
-                <button class="cancelButton" name="submit"><strong>Cancel</strong></button>
-                <button class="updateButton" name="submit"><strong>Update</strong></button>
+            <a href="admin_team.php"><button class="cancelButton" type="button"><strong>Cancel</strong></button></a>
+                <button class="updateButton" name="update"><strong>Update</strong></button>
             </div>
            </div>
         </form>
             <div>
-
         </section>
 </body>
 </html>
