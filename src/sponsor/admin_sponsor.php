@@ -29,10 +29,12 @@ if (isset($_POST['update'])) {
     $sponsorManager->edit($sponsorId, $name, $team_id);
 }
 
-$sponsorToEdit ;
+$sponsorToEdit = null;
 if (isset($_GET['edit'])) {
     $sponsorId = $_GET['edit'];
     $sponsorToEdit = $sponsorManager->findById($sponsorId);
+
+    
 }
 ?>
 
@@ -71,7 +73,7 @@ if (isset($_GET['edit'])) {
                             <td><?php echo $sponsor->getName(); ?></td>
                             <td><?php echo $sponsor->getTeam_name(); ?></td>
                             <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
-                            <td> <a href="admin_sponsor.php?edit=<?php echo $sponsor->getId(); ?>" class="edit"></a></td>
+                            <td> <a id="editButton" href="admin_sponsor.php?edit=<?php echo $sponsor->getId(); ?>" class="edit"></a></td>
 
                             
 
@@ -129,3 +131,4 @@ if (isset($_GET['edit'])) {
     </section>
 </body>
 </html>
+
