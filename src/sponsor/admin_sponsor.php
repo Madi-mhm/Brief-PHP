@@ -27,7 +27,10 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
     <title>Admin Sponsor</title>
 </head>
 <body>
+<a class="homeBtn" href="../../index.php"></a>
+
     <section class="page_admin">
+
         <h1>Administration sponsor page</h1>
         <div class="tab">
             <table>

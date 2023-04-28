@@ -23,6 +23,8 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     <title>Brief php</title>
 </head>
 <body>
+<a class="homeBtn" href="../../index.php"></a>
+
     <section class="page_admin">
         <h1>Administration game page</h1>
         <div class="tab">
