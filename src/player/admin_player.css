@@ -89,3 +89,159 @@ button {
     display: flex;
     align-items: center;
 }
+
+.edit {
+    background-image: url(../images/edit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+.crudButton {
+    display : flex;
+}
+
+.editPoppup {
+
+    height: 100vh;
+    width: 100%;
+background-color: rgba(0, 0, 0, 0.97);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+
+}
+
+form {
+    color: black;
+
+    font-weight: bold;
+    padding: 30px;
+    background-color: #fff;
+    border-radius: 10px;
+    width: 350px;
+}
+
+h1 {
+    font-size: 20px;
+    text-align: center;
+    margin-top: 0;
+}
+
+form .séparation {
+    border-top: 1px solid rgba(0, 0, 0, 0.288);
+}
+
+form .corps-formulaire {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+} 
+
+form .corps-formulaire .contenu {
+    width: 100%;
+}
+
+form .corps-formulaire .boite {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+form .corps-formulaire .contenu .boite input {
+    margin-top: 5px;
+    padding: 10px 5px 10px 10px;
+    border: 1px solid #c9c9c9;
+    outline-color: #747cdf;
+    border-radius: 5px;
+}
+
+form .pied-formulaire {
+    text-align: center;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+form .pied-formulaire button:hover {
+     transform: scale(1.1);
+}
+
+.hide {
+    display: none;
+}
+
+.cancelButton {
+    background-color: #c74141;
+    margin-top: 10px;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.updateButton {
+    margin-top: 10px;
+    background-color: #747cdf;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 10px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+}
+
+.homeBtn{
+    background-image: url(../images/home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    transition: 250ms;
+    border-radius: 5px;
+}
+
+@media screen and (max-width: 640px) {
+    .homeBtn {
+    margin-left: 280px;
+    }
+
+    .page_admin {
+    padding: 100px 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .tab {
+        padding: 25px;
+    }
+
+    .editPoppup {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+}
