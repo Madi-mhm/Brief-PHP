@@ -10,6 +10,20 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
   $managerGame->delete($_GET['delete']);
 }
 
+$allGames = $managerGame->getAllGames();
+$gameToEdit = null;
+if (isset($_GET['edit'])) {
+    $gameId = $_GET['edit'];
+    $gameToEdit = $managerGame->findById($gameId);
+}
+
+if (isset($_POST['update'])) {
+    $gameId = $_POST['id'];
+    $name = $_POST['name'];
+    $station = $_POST['station'];
+    $format = $_POST['format'];
+    $managerGame->edit($gameId, $name, $station, $format);
+}
 
 ?>
 
@@ -21,11 +35,13 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="admin_game.css">
     <title>Brief php</title>
+    <!-- <script src="game.js"></script> -->
+
 </head>
 <body>
 <a class="homeBtn" href="../../index.php"></a>
 
-    <section class="page_admin">
+    <section id="page_admin" class="page_admin">
         <h1>Administration game page</h1>
         <div class="tab">
           <table> 
@@ -39,24 +55,55 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
             </thead>
             <tbody>
             <?php foreach ($allGames as $game) { ?>
-                <tr>
-                  <td><?php echo $game->getName(); ?></td>
-                  <td><?php echo $game->getStation(); ?></td>
-                  <td><?php echo $game->getFormat(); ?></td>
-                  <td><a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a></td>
-                </tr>
-              <?php } ?>
-              <?php if (isset($_POST['name'])) { ?>
-                <tr>
-                  <td><?php echo $_POST['name']; ?></td>
-                  <td><?php echo $_POST['station']; ?></td>
-                  <td><?php echo ($_POST['format']); ?></td>
-                </tr>
-              <?php } ?>
+    <tr>
+        <td><?php echo $game->getName(); ?></td>
+        <td><?php echo $game->getStation(); ?></td>
+        <td><?php echo $game->getFormat(); ?></td>
+        <td>
+        <section class="crudButton">    
+        <a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a>
+        <a href="admin_game.php?edit=<?php echo $game->getId(); ?>" class="edit"></a>
+            </section>
+        </td>
+    </tr>
+<?php } ?>
             </tbody>
           </table>
           <a href="./formulaire_game.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
+
+    <!-- POPPUP -->
+    <section id="editPoppup" class="editPoppup">
+        <div class="poppupContainer">
+        <form method="POST" action="admin_game.php">
+           <h1>Equipes</h1>
+           <div class="séparation">
+            <div class="corps-formulaire">
+                <div class="contenu">
+                    <div class="boite">
+                        <label for="name">Nom du jeu</label>
+                        <input type="text" name="name" value="<?php echo $gameToEdit ? $gameToEdit->getName() : ''; ?>">
+                    </div>
+                    <div class="boite">
+                        <label for="station">Station</label>
+                        <input type="text" name="station" value="<?php echo $gameToEdit ? $gameToEdit->getStation() : ''; ?>">
+                    </div>
+                    <div class="boite">
+                        <label for="format">Format</label>
+                        <input type="text" name="format" value="<?php echo $gameToEdit ? $gameToEdit->getFormat() : ''; ?>">
+                    </div>
+                    <input type="hidden" name="id" value="<?php echo $gameToEdit ? $gameToEdit->getId() : ''; ?>">
+
+                </div>
+            </div>
+            <div class="pied-formulaire">
+            <a href="admin_game.php"><button class="cancelButton" type="button"><strong>Cancel</strong></button></a>
+                <button class="updateButton" name="update"><strong>Update</strong></button>
+            </div>
+           </div>
+        </form>
+            <div>
+        </section>
 </body>
 </html>
