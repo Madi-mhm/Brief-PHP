@@ -8,6 +8,14 @@ if (isset($_GET['delete']) && !empty($_GET['delete'])) {
   $managerTeam->delete($_GET['delete']);
 }
 
+if (isset($_POST['update'])) {
+    $teamId = $_POST['id'];
+    $name = $_POST['name'];
+    $description = $_POST['description'];
+
+    $managerTeam->edit($teamId, $name, $description);
+}
+
 $allTeams = $managerTeam->getAllTeams();
 ?>
 
@@ -40,7 +48,7 @@ $allTeams = $managerTeam->getAllTeams();
         <td>
         <section class="crudButton">    
         <a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a>
-        <a href="#" class="edit"></a>
+        <a href="admin_team.php?edit=<?php echo $team->getId(); ?>" class="edit"></a>
             </section>
         </td>
     </tr>
@@ -57,5 +65,35 @@ $allTeams = $managerTeam->getAllTeams();
           <a href="./formulaire_team.php"><button class="btn">RETOUR</button></a>
         </div>
     </section>
+
+    <!-- POPPUP -->
+    <section class="editPoppup ">
+        <div class="poppupContainer">
+        <form method="POST" action="">
+           <h1>Equipes</h1>
+           <div class="séparation">
+            <div class="corps-formulaire">
+                <div class="contenu">
+                    <div class="boite">
+                        <label for="name">Nom de l'équipe</label>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="boite">
+                        <label for="description">Description</label>
+                        <input type="text" name="description">
+                    </div>
+                   
+
+                </div>
+            </div>
+            <div class="pied-formulaire">
+                <button class="cancelButton" name="submit"><strong>Cancel</strong></button>
+                <button class="updateButton" name="submit"><strong>Update</strong></button>
+            </div>
+           </div>
+        </form>
+            <div>
+
+        </section>
 </body>
 </html>
