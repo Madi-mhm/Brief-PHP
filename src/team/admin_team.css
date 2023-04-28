@@ -70,3 +70,18 @@ tr:hover {
 
 }
 
+.edit {
+    background-image: url(../images/edit.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 30px;
+    width: 30px;
+    display: flex;
+    align-items: center;
+
+}
+
+.crudButton {
+    display : flex;
+}
