@@ -129,7 +129,6 @@ if (isset($_GET['edit'])) {
         </form>
         </div>
     </section>
-    
 </body>
 </html>
 
