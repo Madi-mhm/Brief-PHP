@@ -66,6 +66,16 @@ public function delete($gameId) {
       }
   }
 }
+
+public function edit($gameId, $name, $station, $format)
+{
+  $request = 'UPDATE game SET name = ? , station = ? , format = ? WHERE id = ?';
+  $query = $this->getConnexion()->prepare($request);
+  $query->execute([$name, $station, $format, $gameId]);
+  header('Location:admin_game.php');
+  exit();
+}
+
 }
    
 ?>
