@@ -12,11 +12,11 @@ public function getAllSponsor() {
     $sponsorData = [];
 
     $res = $this->getConnexion()->query('SELECT sponsor.*, team.name AS team_name FROM sponsor 
-                                        LEFT JOIN team ON sponsor.team_id = team.id');
+                                        LEFT JOIN team ON sponsor.team_id = team.id Order by sponsor.id ASC');
 
     foreach ($res as $key) {
         $newSponsor = new Sponsor;
-        $newSponsor->setBrand($key['brand']);
+        $newSponsor->setName($key['name']);
         $newSponsor->setId($key['id']);
         $newSponsor->setTeam_id($key['team_id']);
         $newSponsor->setTeam_name($key['team_name']);
@@ -27,11 +27,11 @@ public function getAllSponsor() {
 }
 
 public function create($sponsor){
-    $request = 'INSERT INTO sponsor (brand, team_id) VALUE (?, ?)';
+    $request = 'INSERT INTO sponsor (name, team_id) VALUE (?, ?)';
     $query = $this->getConnexion()->prepare($request);
 
     $query -> execute([
-        $sponsor->getBrand(),
+        $sponsor->getName(),
         $sponsor->getTeam_id()
     ]);
 
@@ -67,7 +67,7 @@ public function getAllTeams() {
     if ($row) {
         $sponsor = new Sponsor();
         $sponsor->setId($row['id']);
-        $sponsor->setBrand($row['brand']);
+        $sponsor->setName($row['name']);
         $sponsor->setTeam_id($row['team_id']);
         return $sponsor;
     }

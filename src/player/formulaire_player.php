@@ -54,7 +54,7 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
                         <label for="city">Ville</label>
                         <input type="text" name="city">
                     </div>
-                   <div class="boite">
+                   <div class="boite dropDown">
                         <label for="team_id">Equipe</label>
                         <select type="select" name="team_id">
                            <?php foreach($allTeams as $team) { ?>
@@ -62,7 +62,7 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
                            <?php } ?>
                         </select>
                     </div>
-                    <div class="boite">
+                    <div class="boite dropDown">
                         <label for="game_id">Jeu</label>
                         <select type="select" name="game_id">
                             <?php foreach($allGames as $game) { ?>
@@ -79,7 +79,6 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
            </div>
         </form>
     </section>
-    <script type="module" src="player.js"></script> 
 
 </body>
 </html>

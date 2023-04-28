@@ -1,7 +1,7 @@
 <?php 
 class Sponsor {
     private $id; 
-    private $brand; 
+    private $name; 
     private $team_name;
     private $team_id;
 
@@ -12,11 +12,11 @@ class Sponsor {
     public function setId($id){
         $this -> id = $id;
     }
-    public function getBrand(){
-        return $this->brand;
+    public function getName(){
+        return $this->name;
     }
-    public function setBrand($brand){
-        $this -> brand = $brand;
+    public function setName($name){
+        $this -> name = $name;
     }
     public function getTeam_name(){
         return $this->team_name;

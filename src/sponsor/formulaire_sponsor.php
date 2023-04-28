@@ -10,10 +10,10 @@ $allTeams = $sponsorManager->getAllTeams();
 
 
 
-if (!empty($_POST['brand']) ) {
+if (!empty($_POST['name']) ) {
     $newSponsor = new Sponsor();
 
-    $newSponsor->setBrand($_POST['brand']);
+    $newSponsor->setName($_POST['name']);
     // $newSponsor->setTeam_name($_POST['team_name']);
     $newSponsor->setTeam_id(intval($_POST['team_id']));
     
@@ -44,8 +44,8 @@ if (!empty($_POST['brand']) ) {
                 <div class="corps-formulaire">
                     <div class="contenu">
                         <div class="boite">
-                            <label>Brand</label>
-                            <input type="text" name="brand" minlength="3" maxlength="50">
+                            <label>Name</label>
+                            <input type="text" name="name" minlength="3" maxlength="50">
                         </div>
                     </div>
                 </div>
@@ -64,8 +64,6 @@ if (!empty($_POST['brand']) ) {
            </div>
         </form>
     </section>
-    <script type="module" src="sponsor.js"></script> 
-
 </body>
 
 

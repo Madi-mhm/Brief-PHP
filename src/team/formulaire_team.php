@@ -55,7 +55,6 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
            </div>
         </form>
     </section>
-    <script type="module" src="team.js"></script> 
 
 </body>
 

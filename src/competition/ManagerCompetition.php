@@ -6,7 +6,7 @@ require('./CompetitionClass.php');
 class ManagerCompetition extends DBManager {
 
     public function getAllCompetitions() {
-        $res = $this->getConnexion()->query('SELECT * from competition');
+        $res = $this->getConnexion()->query('SELECT * from competition Order by competition.id ASC');
 
         $competitions = [];
 

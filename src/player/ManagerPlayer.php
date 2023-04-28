@@ -11,7 +11,7 @@ require('./PlayerClass.php');
 class ManagerPlayer extends DBManager {
 
     public function getAllPlayers() {
-        $res = $this->getConnexion()->query('SELECT * from player');
+        $res = $this->getConnexion()->query('SELECT * from player Order by player.id ASC');
 
         $players = [];
 

@@ -6,7 +6,7 @@ require('./GameClass.php');
 class ManagerGame extends DBManager {
 
     public function getAllGames() {
-        $res = $this->getConnexion()->query('SELECT * from game');
+        $res = $this->getConnexion()->query('SELECT * from game Order by game.id ASC');
 
         $games = [];
 

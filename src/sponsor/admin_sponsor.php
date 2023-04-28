@@ -35,7 +35,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                     <tr>
                     <tr>
                         <td>ID</td>
-                        <th>Brand</th>
+                        <th>Name</th>
                         <th>Team</th>
                         <td>Suprimer</td>
                     </tr>
@@ -44,7 +44,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                     <?php foreach ($getAllSponsor as $sponsor) { ?>
                         <tr>
                             <td><?php echo $sponsor->getId(); ?></td>
-                            <td><?php echo $sponsor->getBrand(); ?></td>
+                            <td><?php echo $sponsor->getName(); ?></td>
                             <td><?php echo $sponsor->getTeam_id(); ?></td>
                             <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
                             
@@ -56,7 +56,7 @@ $getAllSponsor = $sponsorManager->getAllSponsor();
                     <?php if (isset($_POST['submit'])) { ?>
                         <tr>
                           <td><?php echo $_POST['id']; ?></td>
-                          <td><?php echo $_POST['brand']; ?></td>
+                          <td><?php echo $_POST['name']; ?></td>
                           <td><?php echo $_POST['team_id']; ?></td>
                         </tr>
                     <?php } ?>
