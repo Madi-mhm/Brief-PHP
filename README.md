@@ -1,22 +1,16 @@
-## BRIEF PHP
+# Brief PHP
 
-figma : https://www.figma.com/file/6pMjJuHxuSRBi3vlUQAcg4/Untitled?node-id=0-1&t=9zEalqiPAdgby5uG-0
+Ce projet est un MVP destiné à une agence E sport en expansion. L'objectif est de créer un outil de gestion des équipes et des compétitions.
 
-trello : https://trello.com/b/wRUBoIiP/brief-php
+## Fonctionnalités
 
-## Pour être a jour avec les commits du master sur votre branche:
+- Pages d'administration pour chaque entité
+- Tableaux avec données administrables
+- Formulaire pour ajouter de nouvelles données
 
-1. Récuperer le projet à jour sur la branch master : 
-   ``` git pull ```
-2. Passer de la branch master à votre branch :
-   ``` git checkout <votre branche> ```
-3. Récuperer le projet à jour de master vers votre branch :
-  ``` git merge master ```
-4. Mettre à jour le projet sur votre branch :
-  ```git push ```
-  
-## Pour faire votre pull request
+## Développement
 
-1. Cliquer sur "pull request" sur github.
-
-![Cover](https://github.com/JDeniauSimplon/Brief-PHP/blob/master/sch%C3%A9ma%20BDD/mpd_esport.jpg)
+- Temps #1 collectivement : découverte du cahier des charges
+- Temps #2 collectivement : remédiation, récapitulatif du brief et stratégie de développement
+- Temps #3 individuel : réalisation
+- Temps #4 Stand-up meeting quotidien collectivement
