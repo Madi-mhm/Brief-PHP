@@ -40,7 +40,7 @@ if (!empty($_POST['name']) && isset($_POST['description']) && isset($_POST['form
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Nom de la compétition</label>
+                        <label for="name">Name</label>
                         <input type="text" name="name">
                     </div>
                     <div class="boite">
@@ -48,7 +48,7 @@ if (!empty($_POST['name']) && isset($_POST['description']) && isset($_POST['form
                         <input type="text" name="description">
                     </div>
                     <div class="boite">
-                        <label for="city">Ville</label>
+                        <label for="city">City</label>
                         <input type="text" name="city">
                     </div>
                     <div class="boite dropDown">
@@ -66,7 +66,7 @@ if (!empty($_POST['name']) && isset($_POST['description']) && isset($_POST['form
                         </select>
                     </div>
                     <div class="boite">
-                        <label for="cash_prize">Récompense</label>
+                        <label for="cash_prize">Cash prize</label>
                         <input type="number" name="cash_prize">
                     </div>
 

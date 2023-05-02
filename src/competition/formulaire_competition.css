@@ -123,6 +123,10 @@ form .pied-formulaire button:hover {
     display: flex;
 }
 
+.dropDown select {
+    padding: 5px;
+}
+
 
 /* Partie responsive  */
 @media screen and (max-width: 640px) {
@@ -138,11 +142,12 @@ form .pied-formulaire button:hover {
     justify-content: center;
     align-items: center;
    }
+
+   form {
+    margin-top: 50px;
+   }
 }
 
 
-.dropDown select {
-    padding: 5px;
-}
 
 

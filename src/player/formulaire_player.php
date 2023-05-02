@@ -38,24 +38,24 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
 </section>
     <section class="page">
         <form method="POST" action="">
-           <h1>Player</h1>
+           <h1>Players</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="first_name">Prénom</label>
+                        <label for="first_name">First Name</label>
                         <input type="text" name="first_name">
                     </div>
                     <div class="boite">
-                        <label for="second_name">Nom</label>
+                        <label for="second_name">Second Name</label>
                         <input type="text" name="second_name">
                     </div>
                     <div class="boite">
-                        <label for="city">Ville</label>
+                        <label for="city">City</label>
                         <input type="text" name="city">
                     </div>
                    <div class="boite dropDown">
-                        <label for="team_id">Equipe</label>
+                        <label for="team_id">Team</label>
                         <select type="select" name="team_id">
                            <?php foreach($allTeams as $team) { ?>
                                   <option value="<?= $team->getId() ?>"><?= $team->getName() ?></option>
@@ -63,7 +63,7 @@ if (isset($_POST['first_name']) && isset($_POST['second_name']) && isset($_POST[
                         </select>
                     </div>
                     <div class="boite dropDown">
-                        <label for="game_id">Jeu</label>
+                        <label for="game_id">Game</label>
                         <select type="select" name="game_id">
                             <?php foreach($allGames as $game) { ?>
                                    <option value="<?= $game->getId() ?>"><?= $game->getName() ?></option>

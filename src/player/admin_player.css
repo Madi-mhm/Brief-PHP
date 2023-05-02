@@ -235,11 +235,4 @@ form .pied-formulaire {
     .tab {
         padding: 25px;
     }
-
-    .editPoppup {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    }
 }

@@ -46,11 +46,11 @@ if (isset($_GET['edit'])) {
           <table>
             <thead>
             <tr>
-                <th>Nom</th>
+                <th>Name</th>
                 <th>Description</th>
-                <th>Ville</th>
+                <th>City</th>
                 <th>Format</th>
-                <th>Récompense</th>
+                <th>Cash prize</th>
                 <td></td>
                 <td></td>
             </tr>
@@ -78,7 +78,7 @@ if (isset($_GET['edit'])) {
               <?php } ?>
             </tbody>
           </table>
-          <a href="./formulaire_competition.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_competition.php"><button class="btn">RETURN</button></a>
         </div>
     </section>
     <section class="competitionPopup">
@@ -89,7 +89,7 @@ if (isset($_GET['edit'])) {
         <div class="corps-formulaire">
             <div class="contenu">
                 <div class="boite">
-                    <label for="name">Nom de la compétition</label>
+                    <label for="name">Name</label>
                     <input type="text" name="name" value="<?php echo $competitionToEdit ? $competitionToEdit->getName() : ''; ?>">
                 </div>
                 <div class="boite">
@@ -97,7 +97,7 @@ if (isset($_GET['edit'])) {
                     <input type="text" name="description" value="<?php echo $competitionToEdit ? $competitionToEdit->getDescription() : ''; ?>">
                 </div>
                 <div class="boite">
-                    <label for="city">Ville</label>
+                    <label for="city">City</label>
                     <input type="text" name="city" value="<?php echo $competitionToEdit ? $competitionToEdit->getCity() : ''; ?>">
                 </div>
                 <div class="boite dropDown">
@@ -115,7 +115,7 @@ if (isset($_GET['edit'])) {
                     </select>
                 </div>
                 <div class="boite">
-                    <label for="reward">Récompense</label>
+                    <label for="reward">Cash prize</label>
                     <input type="number" name="reward" value="<?php echo $competitionToEdit ? $competitionToEdit->getCashPrize() : ''; ?>">
                 </div>
             </div>
