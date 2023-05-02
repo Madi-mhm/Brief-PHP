@@ -36,13 +36,15 @@ if (isset($_GET['edit'])) {
     <title>Brief php</title>
 </head>
 <body>
+<a class="homeBtn" href="../../index.php"></a>
+
 <section class="page_admin">
-        <h1>Administration team page</h1>
+        <h1>Team page administration</h1>
         <div class="tab">
           <table> 
             <thead>
             <tr>
-                <th>Nom</th>
+                <th>Name</th>
                 <th>Description</th>
                 <th></th>
                 <th></th>
@@ -63,7 +65,7 @@ if (isset($_GET['edit'])) {
 <?php } ?>
             </tbody>
           </table>
-          <a href="./formulaire_team.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_team.php"><button class="btn">Return</button></a>
         </div>
     </section>
 
@@ -76,7 +78,7 @@ if (isset($_GET['edit'])) {
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Nom de l'équipe</label>
+                        <label for="name">Name</label>
                         <input type="text" name="name" value="<?php echo $teamToEdit ? $teamToEdit->getName() : ''; ?>">
                     </div>
                     <div class="boite">
