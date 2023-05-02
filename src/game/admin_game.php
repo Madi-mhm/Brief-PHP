@@ -78,12 +78,12 @@ if (isset($_POST['update'])) {
     <section id="editPoppup" class="editPoppup">
         <div class="poppupContainer">
         <form method="POST" action="admin_game.php">
-           <h1>Team</h1>
+           <h1>Game</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Game name</label>
+                        <label for="name">Name</label>
                         <input type="text" name="name" value="<?php echo $gameToEdit ? $gameToEdit->getName() : ''; ?>">
                     </div>
                     <div class="boite">
