@@ -65,7 +65,8 @@ if (isset($_POST['update'])) {
                 <th>Ville</th>
                 <th>Equipe</th>
                 <th>Jeu</th>
-                <th>Supprimer</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -76,12 +77,12 @@ if (isset($_POST['update'])) {
                   <td><?php echo $player->getCity(); ?></td>
                   <td><?php echo $player->getTeamId(); ?></td>
                   <td><?php echo $player->getGameId(); ?></td>
-                  <td>
+                  
                   <section class="crudButton">    
-        <a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a>
-        <a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a>
-            </section>
-        </td>
+                    <td><a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a></td>
+                    <td><a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a></td>
+                    </section>
+                        
                 </tr>
               <?php } ?>
             </tbody>
@@ -118,7 +119,7 @@ if (isset($_POST['update'])) {
                           <?php } ?>
                         </select>
                     </div>
-                    <div class="boite">
+                    <div class="boite dropDown">
                         <label for="game_id">Jeu</label>
                         <select type="select" name="game_id">
                           <?php foreach($allGames as $game) { ?>

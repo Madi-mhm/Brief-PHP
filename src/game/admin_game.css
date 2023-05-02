@@ -114,15 +114,10 @@ button {
 }
 
 .editPoppup {
-
-    height: 100vh;
     width: 100%;
-background-color: rgba(0, 0, 0, 0.97);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   
-
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0 6rem 0;
 }
 
 form {
