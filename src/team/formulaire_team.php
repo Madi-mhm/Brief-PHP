@@ -33,12 +33,12 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
     
     <section class="page">
         <form method="POST" action="">
-           <h1>Equipes</h1>
+           <h1>Team</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Nom de l'équipe</label>
+                        <label for="name">Team name</label>
                         <input type="text" name="name">
                     </div>
                     <div class="boite">

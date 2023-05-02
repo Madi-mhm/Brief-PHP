@@ -39,7 +39,7 @@ if (isset($_GET['edit'])) {
 <a class="homeBtn" href="../../index.php"></a>
 
 <section class="page_admin">
-        <h1>Team page administration</h1>
+        <h1>Administration team page</h1>
         <div class="tab">
           <table> 
             <thead>
@@ -73,7 +73,7 @@ if (isset($_GET['edit'])) {
     <section class="editPoppup">
         <div class="poppupContainer">
         <form method="POST" action="">
-           <h1>Equipes</h1>
+           <h1>Team</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
