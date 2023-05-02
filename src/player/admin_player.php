@@ -70,20 +70,30 @@ if (isset($_POST['update'])) {
             </thead>
             <tbody>
              <?php foreach ($allPlayers as $player) { ?>
-                <tr>
-                  <td><?php echo $player->getFirstName(); ?></td>
-                  <td><?php echo $player->getSecondName(); ?></td>
-                  <td><?php echo $player->getCity(); ?></td>
-                  <td><?php echo $player->getTeamId(); ?></td>
-                  <td><?php echo $player->getGameId(); ?></td>
-                  <td>
-                  <section class="crudButton">    
-        <a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a>
-        <a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a>
-            </section>
-        </td>
-                </tr>
-              <?php } ?>
+            <tr>
+            <td><?php echo $player->getFirstName(); ?></td>
+            <td><?php echo $player->getSecondName(); ?></td>
+            <td><?php echo $player->getCity(); ?></td>
+            <td>
+                <?php
+                $team = $managerPlayer->getTeamById($player->getTeamId());
+                echo $team ? $team->getName() : '-';
+                ?>
+            </td>
+            <td>
+                <?php
+                $game = $managerPlayer->getGameById($player->getGameId());
+                echo $game ? $game->getName() : '-';
+                ?>
+            </td>
+            <td>
+                <section class="crudButton">    
+                    <a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a>
+                    <a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a>
+                </section>
+            </td>
+            </tr>
+                 <?php } ?>
             </tbody>
           </table>
           <a href="./formulaire_player.php"><button class="btn">RETOUR</button></a>
@@ -91,27 +101,27 @@ if (isset($_POST['update'])) {
     </section>
 
     <!-- POPPUP -->
-    <section id="editPoppup" class="editPoppup">
-        <div class="poppupContainer">
+    <section class="playerPopup">
+        <div class="popupContainer">
         <form method="POST" action="admin_player.php">
-           <h1>Equipes</h1>
+           <h1>Joueurs</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="first_name">Prénom</label>
+                        <label for="first_name">First Name</label>
                         <input type="text" name="first_name" value="<?php echo $playerToEdit ? $playerToEdit->getFirstName() : ''; ?>">
                     </div>
                     <div class="boite">
-                        <label for="second_name">Nom</label>
+                        <label for="second_name">Second Name</label>
                         <input type="text" name="second_name" value="<?php echo $playerToEdit ? $playerToEdit->getSecondName() : ''; ?>">
                     </div>
                     <div class="boite">
-                        <label for="city">Ville</label>
+                        <label for="city">City</label>
                         <input type="text" name="city" value="<?php echo $playerToEdit ? $playerToEdit->getCity() : ''; ?>">
                     </div>
                     <div class="boite dropDown">
-                        <label for="team_id">Equipe</label>
+                        <label for="team_id">Team</label>
                         <select type="select" name="team_id">
                           <?php foreach($allTeams as $team) { ?>
                           <option value="<?php echo $team->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getTeamId() == $team->getId()) echo 'selected'; ?>><?= $team->getName() ?></option>
@@ -119,7 +129,7 @@ if (isset($_POST['update'])) {
                         </select>
                     </div>
                     <div class="boite">
-                        <label for="game_id">Jeu</label>
+                        <label for="game_id">Game</label>
                         <select type="select" name="game_id">
                           <?php foreach($allGames as $game) { ?>
                         <option value="<?php echo $game->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getGameId() == $game->getId()) echo 'selected'; ?>><?= $game->getName() ?></option>

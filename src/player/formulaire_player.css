@@ -150,4 +150,8 @@ form .pied-formulaire button:hover {
     justify-content: center;
     align-items: center;
    }
+
+   form {
+    margin-top: 50px;
+   }
 }

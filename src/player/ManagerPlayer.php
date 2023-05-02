@@ -62,6 +62,41 @@ class ManagerPlayer extends DBManager {
         return $games;
     }
 
+    public function getTeamById($teamId) {
+      $request = 'SELECT * FROM team WHERE id = :id';
+      $query = $this->getConnexion()->prepare($request);
+      $query->execute([':id' => $teamId]);
+      $row = $query->fetch();
+  
+      if ($row) {
+          $team = new Team();
+          $team->setId($row['id']);
+          $team->setName($row['name']);
+          $team->setDescription($row['description']);
+          return $team;
+      }
+  
+      return null;
+  }
+  
+  public function getGameById($gameId) {
+      $request = 'SELECT * FROM game WHERE id = :id';
+      $query = $this->getConnexion()->prepare($request);
+      $query->execute([':id' => $gameId]);
+      $row = $query->fetch();
+  
+      if ($row) {
+          $game = new Game();
+          $game->setId($row['id']);
+          $game->setName($row['name']);
+          $game->setFormat($row['format']);
+          $game->setStation($row['station']);
+          return $game;
+      }
+  
+      return null;
+  }
+
     public function create($player) {
     $request = 'INSERT INTO player (first_name, second_name, city, team_id, game_id) VALUE (?, ?, ?, ?, ?)';
     $query = $this->getConnexion()->prepare($request);
