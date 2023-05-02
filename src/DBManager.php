@@ -7,8 +7,8 @@ class DBManager {
         try {
             $this->bdd = new PDO (
                 'mysql:host=localhost;dbname=brief;charset=utf8',
-                'root',
                 'root'
+                // 'root'
             );
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
