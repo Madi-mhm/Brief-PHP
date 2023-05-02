@@ -32,7 +32,6 @@ body {
 .page_admin {
     padding: 25px 0;
     width: 100%;
-    height: 100vh;
 
 }
 
@@ -107,12 +106,10 @@ button {
 }
 
 .competitionPopup {
-    background-color: #893434;
     width: 100%;
-    height: 100vh;
     display: flex;
     justify-content: center;
-    align-items: center;
+    margin: 3rem 0 6rem 0;
 }
 
 form {

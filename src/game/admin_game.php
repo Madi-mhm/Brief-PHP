@@ -50,7 +50,8 @@ if (isset($_POST['update'])) {
                 <th>Nom</th>
                 <th>Station</th>
                 <th>Format</th>
-                <th>Suprimer</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
@@ -59,12 +60,12 @@ if (isset($_POST['update'])) {
         <td><?php echo $game->getName(); ?></td>
         <td><?php echo $game->getStation(); ?></td>
         <td><?php echo $game->getFormat(); ?></td>
-        <td>
+        
         <section class="crudButton">    
-        <a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a>
-        <a href="admin_game.php?edit=<?php echo $game->getId(); ?>" class="edit"></a>
+        <td><a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a></td>
+        <td><a href="admin_game.php?edit=<?php echo $game->getId(); ?>" class="edit"></a> </td>
             </section>
-        </td>
+       
     </tr>
 <?php } ?>
             </tbody>
