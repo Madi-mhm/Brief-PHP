@@ -38,7 +38,7 @@ if (isset($_POST['name']) && isset($_POST['description'])) {
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Team name</label>
+                        <label for="name">Name</label>
                         <input type="text" name="name">
                     </div>
                     <div class="boite">
