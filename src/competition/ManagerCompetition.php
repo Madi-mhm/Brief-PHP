@@ -1,7 +1,7 @@
 <?php 
 
-require('../DBManager.php');
-require('./CompetitionClass.php');
+require_once ('../DBManager.php');
+require ('../competition/CompetitionClass.php');
 
 class ManagerCompetition extends DBManager {
 
@@ -66,6 +66,16 @@ class ManagerCompetition extends DBManager {
        exit();
      }
   }
+
+  public function edit( $competitionId, $name, $description, $city, $format, $cash_prize)
+  {
+      $request = 'UPDATE competition SET name = ?, description = ?, city = ?, format = ?, cash_prize = ? WHERE id = ?';
+      $query = $this->getConnexion()->prepare($request);
+      $query->execute([$name, $description, $city, $format, $cash_prize, $competitionId]);
+      header('Location:admin_competition.php');
+      exit();
+  }
+
 }
 
 ?>
