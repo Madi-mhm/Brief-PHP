@@ -55,12 +55,8 @@ if (isset($_GET['edit'])) {
     <tr>
         <td><?php echo $team->getName(); ?></td>
         <td><?php echo $team->getDescription(); ?></td>
-        
-          
         <td><a href="admin_team.php?delete=<?php echo $team->getId(); ?>" class="trash"></a></td>
-        <td><a href="admin_team.php?edit=<?php echo $team->getId(); ?>" class="edit"></a></td>
-            
-        
+        <td><a href="admin_team.php?edit=<?php echo $team->getId(); ?>" class="edit"></a></td>       
     </tr>
 <?php } ?>
             </tbody>
