@@ -59,12 +59,9 @@ if (isset($_POST['update'])) {
     <tr>
         <td><?php echo $game->getName(); ?></td>
         <td><?php echo $game->getStation(); ?></td>
-        <td><?php echo $game->getFormat(); ?></td>
-        
-        <section class="crudButton">    
+        <td><?php echo $game->getFormat(); ?></td> 
         <td><a href="admin_game.php?delete=<?php echo $game->getId(); ?>" class="trash"></a></td>
         <td><a href="admin_game.php?edit=<?php echo $game->getId(); ?>" class="edit"></a> </td>
-            </section>
        
     </tr>
 <?php } ?>
