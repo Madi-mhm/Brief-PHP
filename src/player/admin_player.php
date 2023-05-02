@@ -60,11 +60,11 @@ if (isset($_POST['update'])) {
           <table> 
             <thead>
             <tr>
-                <th>Nom</th>
-                <th>Prénom</th>
-                <th>Ville</th>
-                <th>Equipe</th>
-                <th>Jeu</th>
+                <th>First Name</th>
+                <th>Second Name</th>
+                <th>City</th>
+                <th>Team</th>
+                <th>Game</th>
                 <th></th>
                 <th></th>
             </tr>
@@ -99,7 +99,7 @@ if (isset($_POST['update'])) {
 
             </tbody>
           </table>
-          <a href="./formulaire_player.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_player.php"><button class="btn">RETURN</button></a>
         </div>
     </section>
 
@@ -107,7 +107,7 @@ if (isset($_POST['update'])) {
     <section class="playerPopup">
         <div class="popupContainer">
         <form method="POST" action="admin_player.php">
-           <h1>Joueurs</h1>
+           <h1>Players</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
@@ -134,7 +134,6 @@ if (isset($_POST['update'])) {
 
                     <div class="boite">
                         <label for="game_id">Game</label>
-
                         <select type="select" name="game_id">
                           <?php foreach($allGames as $game) { ?>
                         <option value="<?php echo $game->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getGameId() == $game->getId()) echo 'selected'; ?>><?= $game->getName() ?></option>

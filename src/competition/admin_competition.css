@@ -213,3 +213,21 @@ form .pied-formulaire {
 .dropDown select  {
     padding: 5px;
 }
+
+@media screen and (max-width: 640px) {
+    .homeBtn {
+    margin-left: 280px;
+    }
+
+    .page_admin {
+    padding-top: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    }
+
+    .tab {
+        padding: 25px;
+    }
+}
