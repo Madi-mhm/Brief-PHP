@@ -88,12 +88,12 @@ if (isset($_POST['update'])) {
                 echo $game ? $game->getName() : '-';
                 ?>
             </td>
-            <td>
-                <section class="crudButton">    
-                    <a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a>
-                    <a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a>
-                </section>
-            </td>
+          
+                 
+            <td><a href="admin_player.php?delete=<?php echo $player->getId(); ?>" class="trash"></a></td>
+            <td><a href="admin_player.php?edit=<?php echo $player->getId(); ?>" class="edit"></a></td>
+                
+            
             </tr>
                  <?php } ?>
 

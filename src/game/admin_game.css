@@ -109,10 +109,6 @@ button {
 
 }
 
-.crudButton {
-    display : flex;
-}
-
 .editPoppup {
     width: 100%;
     display: flex;
