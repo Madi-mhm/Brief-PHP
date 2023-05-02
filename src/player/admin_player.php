@@ -65,11 +65,13 @@ if (isset($_POST['update'])) {
                 <th>Ville</th>
                 <th>Equipe</th>
                 <th>Jeu</th>
-                <th>Supprimer</th>
+                <th></th>
+                <th></th>
             </tr>
             </thead>
             <tbody>
              <?php foreach ($allPlayers as $player) { ?>
+
             <tr>
             <td><?php echo $player->getFirstName(); ?></td>
             <td><?php echo $player->getSecondName(); ?></td>
@@ -94,6 +96,7 @@ if (isset($_POST['update'])) {
             </td>
             </tr>
                  <?php } ?>
+
             </tbody>
           </table>
           <a href="./formulaire_player.php"><button class="btn">RETOUR</button></a>
@@ -128,8 +131,10 @@ if (isset($_POST['update'])) {
                           <?php } ?>
                         </select>
                     </div>
+
                     <div class="boite">
                         <label for="game_id">Game</label>
+
                         <select type="select" name="game_id">
                           <?php foreach($allGames as $game) { ?>
                         <option value="<?php echo $game->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getGameId() == $game->getId()) echo 'selected'; ?>><?= $game->getName() ?></option>
