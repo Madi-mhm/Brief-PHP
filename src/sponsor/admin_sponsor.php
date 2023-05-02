@@ -74,9 +74,6 @@ if (isset($_GET['edit'])) {
                             <td><?php echo $sponsor->getTeam_name(); ?></td>
                             <td><a href="admin_sponsor.php?delete=<?php echo $sponsor->getId(); ?>"  class="trash"></a></td>
                             <td> <a id="editButton" href="admin_sponsor.php?edit=<?php echo $sponsor->getId(); ?>" class="edit"></a></td>
-
-                            
-
                         </tr>
                     <?php } ?>
                     
