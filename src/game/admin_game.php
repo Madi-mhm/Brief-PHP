@@ -47,7 +47,7 @@ if (isset($_POST['update'])) {
           <table> 
             <thead>
             <tr>
-                <th>Nom</th>
+                <th>Name</th>
                 <th>Station</th>
                 <th>Format</th>
                 <th></th>
@@ -70,7 +70,7 @@ if (isset($_POST['update'])) {
 <?php } ?>
             </tbody>
           </table>
-          <a href="./formulaire_game.php"><button class="btn">RETOUR</button></a>
+          <a href="./formulaire_game.php"><button class="btn">RETURN</button></a>
         </div>
     </section>
 
@@ -78,12 +78,12 @@ if (isset($_POST['update'])) {
     <section id="editPoppup" class="editPoppup">
         <div class="poppupContainer">
         <form method="POST" action="admin_game.php">
-           <h1>Equipes</h1>
+           <h1>Team</h1>
            <div class="séparation">
             <div class="corps-formulaire">
                 <div class="contenu">
                     <div class="boite">
-                        <label for="name">Nom du jeu</label>
+                        <label for="name">Game name</label>
                         <input type="text" name="name" value="<?php echo $gameToEdit ? $gameToEdit->getName() : ''; ?>">
                     </div>
                     <div class="boite">
