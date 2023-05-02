@@ -93,7 +93,7 @@ if (isset($_GET['edit'])) {
                     </tbody>
                 <tbody>
             </table>
-            <a href="./formulaire_sponsor.php"><button class="btn">RETOUR</button></a>
+            <a href="./formulaire_sponsor.php"><button class="btn">Return</button></a>
         </div>
     </section>
     <section class="sponsorPopup">
@@ -122,7 +122,7 @@ if (isset($_GET['edit'])) {
                         </select>
                 </div>
                 <div class="pied-formulaire">
-                    <button class="cancelButton" value="add sponsor" ><strong>Cancel</strong></button>
+                    <button class="cancelButton"><strong>Cancel</strong></button>
                     <button class="submitButton" name="update" value="add sponsor" ><strong>Update</strong></button>
                 </div>
            </div>

@@ -5,13 +5,31 @@ body {
     margin: 0;
     color: white;
 }
+.homeBtn{
+    background-image: url(../images/home.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 50px;
+    width: 50px;
+    display: flex;
+    align-items: center;
+    transition: 250ms;
+    border-radius: 5px;
+    margin: 10px;   
+   
+}
+
+.homeBtn:hover{
+    background-color: #5961d1;
+    width: 55px;
+    height: 55px;
+}
 
 .page_admin {
     padding: 25px 0;
-    height: 100vh;
     width: 100%;
     overflow: hidden;
-
     position: relative;
 }
 
@@ -87,22 +105,15 @@ tr:hover {
 
 }
 
-
 .editPoppup {
-
-    height: 100vh;
     width: 100%;
-background-color: rgba(0, 0, 0, 0.97);
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   
-
+    display: flex;
+    justify-content: center;  
+    margin: 3rem 0 6rem 0;
 }
 
 form {
     color: black;
-
     font-weight: bold;
     padding: 30px;
     background-color: #fff;
@@ -187,18 +198,4 @@ form .pied-formulaire button:hover {
     outline: none;
     cursor: pointer;
     transition: transform 0.5s;
-}
-
-.homeBtn{
-    background-image: url(../images/home.png);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 50px;
-    width: 50px;
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    transition: 250ms;
-    border-radius: 5px;
 }
