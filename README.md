@@ -14,3 +14,8 @@ Ce projet est un MVP destiné à une agence E sport en expansion. L'objectif est
 - Temps #2 collectivement : remédiation, récapitulatif du brief et stratégie de développement
 - Temps #3 individuel : réalisation
 - Temps #4 Stand-up meeting quotidien collectivement
+
+## Schéma de la base de donnée 
+
+![Cover](https://github.com/JDeniauSimplon/Brief-PHP/blob/master/sch%C3%A9ma%20BDD/mpd_esport.jpg)
+
