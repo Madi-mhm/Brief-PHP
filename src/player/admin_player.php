@@ -113,17 +113,17 @@ if (isset($_POST['update'])) {
                     <div class="boite dropDown">
                         <label for="team_id">Equipe</label>
                         <select type="select" name="team_id">
-                           <?php foreach($allTeams as $team) { ?>
-                                  <option value="<?php echo $teamToEdit ? $teamToEdit->getTeamId() : ''; ?>"><?= $team->getName() ?></option>
-                           <?php } ?>
+                          <?php foreach($allTeams as $team) { ?>
+                          <option value="<?php echo $team->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getTeamId() == $team->getId()) echo 'selected'; ?>><?= $team->getName() ?></option>
+                          <?php } ?>
                         </select>
                     </div>
                     <div class="boite">
                         <label for="game_id">Jeu</label>
                         <select type="select" name="game_id">
-                            <?php foreach($allGames as $game) { ?>
-                                   <option value="<?php echo $gameToEdit ? $gameToEdit->getGameId() : ''; ?>"><?= $game->getName() ?></option>
-                            <?php } ?>
+                          <?php foreach($allGames as $game) { ?>
+                        <option value="<?php echo $game->getId(); ?>" <?php if ($playerToEdit && $playerToEdit->getGameId() == $game->getId()) echo 'selected'; ?>><?= $game->getName() ?></option>
+                          <?php } ?>
                         </select>
                     </div>
                     <input type="hidden" name="id" value="<?php echo $playerToEdit ? $playerToEdit->getId() : ''; ?>">
