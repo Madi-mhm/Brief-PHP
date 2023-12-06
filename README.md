@@ -2,6 +2,12 @@
 
 Ce projet est un MVP destiné à une agence E sport en expansion. L'objectif est de créer un outil de gestion des équipes et des compétitions.
 
+## How to run
+1. symfony serve
+2. Connect the mysql dataBase
+3. run the esport.sql file
+4. check on localhost:8000 
+
 ## Fonctionnalités
 
 - Pages d'administration pour chaque entité
